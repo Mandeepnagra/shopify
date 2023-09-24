@@ -12,7 +12,11 @@ export default  {
     'bg-no-repeat',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'red': '#CF4646',
+      },
+    }
   },
   plugins: [],
 }

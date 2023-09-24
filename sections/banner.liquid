@@ -9,22 +9,24 @@
 {%- endstyle -%}
 
 <div
-  class="banner bg-{{ section.settings.background_position }} bg-{{ section.settings.background_repeat }}"
+  class="banner bg-black bg-{{ section.settings.background_position }} bg-{{ section.settings.background_repeat }}"
   style='background-image:url(
   {%- if section.settings.image != blank -%}
     {{ section.settings.image | image_url }}
+  {% else %}
+    https://cdn.shopify.com/s/files/1/0824/4654/9278/files/bg-img.jpg?v=1695524474
   {%- endif -%}
   )'>
   <div
-    class="container">
+    class="container py-64">
     <div
       class="grid grid-cols-2">
       <div
         class="col-start-2">
         <div
-          class="text-{{section.settings.align_content}}">
+          class="text-{{section.settings.align_content}} p-24 bg-white">
           <div
-            class="sub-heading">{{ section.settings.banner_subheading }}</div>
+            class="sub-heading text-red text-[18px]">{{ section.settings.banner_subheading }}</div>
           <h2
             class="text-5xl sm:text-6xl">
             {{ section.settings.banner_heading }}
