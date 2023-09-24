@@ -3511,3 +3511,15 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+
+:root{
+  --red: #CF4646;
+}
+@font-face {
+  font-family: "Evolventa-Bold";
+  src: url("{{ 'Evolventa-Bold' | asset_url }}") format("woff");
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: Evolventa-Bold;
+}
