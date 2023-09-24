@@ -1,3 +1,12 @@
 {
-   
-} 
+    "wrapper": "div#banner_id.banner_class[attribute-one=value]",
+    "sections": {
+      "banner": {
+        "type": "banner"
+      }
+    },
+    "order": [
+      "banner"
+    ]
+  }
+  
