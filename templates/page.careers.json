@@ -1,5 +1,5 @@
 {
-    "wrapper": "div#banner_id.banner_class[attribute-one=value]",
+    "wrapper": "section#section-careers-banner.section-careers-banner.shopify-section.section",
     "sections": {
       "banner": {
         "type": "banner"

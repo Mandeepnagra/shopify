@@ -1,14 +1,51 @@
+{%- style -%}
+  .section-{{ section.id }}-padding .banner {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
+    px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
+    px;
+    background-position: ;
+  }
+{%- endstyle -%}
+
 <div
-  class="banner"
-  style='background:url(
+  class="banner bg-{{ section.settings.background_position }} bg-{{ section.settings.background_repeat }}"
+  style='background-image:url(
   {%- if section.settings.image != blank -%}
     {{ section.settings.image | image_url }}
-  {%- else -%}
-    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
   {%- endif -%}
   )'>
-  <p
-    class="underline">Tailwind class</p>
+  <div
+    class="container">
+    <div
+      class="grid grid-cols-2">
+      <div
+        class="col-start-2">
+        <div
+          class="text-{{section.settings.align_content}}">
+          <div
+            class="sub-heading">{{ section.settings.banner_subheading }}</div>
+          <h2
+            class="text-5xl sm:text-6xl">
+            {{ section.settings.banner_heading }}
+          </h2>
+          <div
+            class="mt-3 text-lg md:text-base">
+            <p>{{ section.settings.banner_description }}</p>
+          </div>
+          <div
+            class="mt-6 hidden md:block md:mt-2">
+            <a
+              class="button"
+              data-state="primary"
+              href="{{section.settings.button_link}}">
+              <span>{{ section.settings.button_label }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% schema %}
@@ -20,9 +57,10 @@
         "type": "image_picker",
         "id": "image",
         "label": "Background Image"
-      }, {
+      },
+      {
         "type": "select",
-        "id": "background-repeat",
+        "id": "background_repeat",
         "options": [
           {
             "value": "repeat",
@@ -34,6 +72,66 @@
         ],
         "default": "repeat",
         "label": "Background Repeat"
+      },
+      {
+        "type": "select",
+        "id": "background_position",
+        "options": [
+          {
+            "value": "auto",
+            "label": "Auto"
+          }, {
+            "value": "contain",
+            "label": "Contain"
+          }, {
+            "value": "cover",
+            "label": "Cover"
+          }
+        ],
+        "default": "auto",
+        "label": "Background Position"
+      },
+      {
+        "type": "text",
+        "id": "banner_heading",
+        "label": "Heading",
+        "default": "Transform your world together"
+      }, {
+        "type": "text",
+        "id": "banner_subheading",
+        "label": "Sub-Heading",
+        "default": "Talent wanted"
+      }, {
+        "type": "textarea",
+        "id": "banner_description",
+        "label": "Description",
+        "default": "Craft experiences that customers rave about. Our customers are at the heart of everything we do. Understand the market, analyze trends, and deliver something better."
+      }, {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "Join our team"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "select",
+        "id": "align_content",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "label": "Content Alignment"
       }
     ],
     "presets": [
