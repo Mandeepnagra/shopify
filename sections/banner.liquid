@@ -1,43 +1,38 @@
-<div class="banner" background="url(
-    {%- if section.settings.image != blank -%}
-        {{ section.settings.image | image_url }}
-    {%- else -%}
-        {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    {%- endif -%}
-    )">
+<div
+  class="banner"
+  background='url(
+  {%- if section.settings.image != blank -%}
+    {{ section.settings.image | image_url }}
+  {%- else -%}
+    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+  {%- endif -%}
+  )'>
 </div>
 
-
-
 {% schema %}
-{
-"name": "banner",
-  "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Background Image"
-    },
-    {
-      "type": "select",
-      "id": "background-repeat",
-      "options": [
-        {
-          "value": "repeat",
-          "label": "Repeat"
-        },
-        {
-          "value": "no-repeat",
-          "label": "No-Repeat"
-        }
-      ],
-      "default": "repeat",
-      "label": "Background Repeat"
-    },
-  ]
-}
+  {
+    "name": "banner",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background Image"
+      }, {
+        "type": "select",
+        "id": "background-repeat",
+        "options": [
+          {
+            "value": "repeat",
+            "label": "Repeat"
+          }, {
+            "value": "no-repeat",
+            "label": "No-Repeat"
+          }
+        ],
+        "default": "repeat",
+        "label": "Background Repeat"
+      }
+    ]
+  }
 {% endschema %}
