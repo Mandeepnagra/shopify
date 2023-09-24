@@ -1,3 +1,14 @@
+<div class="banner" background="url(
+    {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url }}
+    {%- else -%}
+        {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+    )">
+</div>
+
+
+
 {% schema %}
 {
 "name": "banner",
