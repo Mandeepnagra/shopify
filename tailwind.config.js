@@ -14,7 +14,7 @@ export default  {
   theme: {
     extend: {
       colors: {
-        'red': '#CF4646',
+        primary: "var(--primary)"
       },
     }
   },

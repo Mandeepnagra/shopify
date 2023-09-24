@@ -1,13 +1,3 @@
-{%- style -%}
-  .section-{{ section.id }}-padding .banner {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
-    px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
-    px;
-    background-position: ;
-  }
-{%- endstyle -%}
-
 <div
   class="banner bg-black bg-{{ section.settings.background_position }} bg-{{ section.settings.background_repeat }}"
   style='background-image:url(
@@ -18,15 +8,15 @@
   {%- endif -%}
   )'>
   <div
-    class="container py-64">
+    class="container p-6 md:p-0 md:py-64">
     <div
-      class="grid grid-cols-2">
+      class="grid grid-cols-1 md:grid-cols-2">
       <div
-        class="col-start-2">
+        class="col-start-1 md:col-start-2">
         <div
-          class="text-{{section.settings.align_content}} p-24 bg-white">
+          class="text-{{section.settings.align_content}} p-12 md:p-24 bg-white">
           <div
-            class="sub-heading text-red text-[18px]">{{ section.settings.banner_subheading }}</div>
+            class="sub-heading text-primary">{{ section.settings.banner_subheading }}</div>
           <h2
             class="text-5xl sm:text-6xl">
             {{ section.settings.banner_heading }}
