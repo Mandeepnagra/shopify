@@ -1965,6 +1965,7 @@ video {
 .\[vite\:html\] {
   vite: html;
 }
+
 @media (min-width: 640px) {
 
   .sm\:container {
@@ -1978,29 +1979,36 @@ video {
     }
   }
 }
+
 .hover\:font-bold:hover {
   font-weight: 700;
 }
+
 .before\:hover\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
 }
+
 .hover\:before\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
 }
+
 .focus\:hover\:text-center:hover:focus {
   text-align: center;
 }
+
 .hover\:focus\:text-center:focus:hover {
   text-align: center;
 }
+
 @media (min-width: 640px) {
 
   .sm\:underline {
     text-decoration-line: underline;
   }
 }
+
 @media (min-width: 768px) {
 
   .md\:col-start-2 {
@@ -2032,6 +2040,19 @@ video {
     padding-bottom: 10rem;
   }
 
+  .md\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .md\:pl-16 {
+    padding-left: 4rem;
+  }
+
+  .md\:pr-\[5\.625rem\] {
+    padding-right: 5.625rem;
+  }
+
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
@@ -2046,6 +2067,7 @@ video {
     line-height: 65px;
   }
 }
+
 @media (prefers-color-scheme: dark) {
 
   @media (min-width: 1024px) {
