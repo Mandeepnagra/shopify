@@ -2,7 +2,7 @@
 
 export default  {
   content: [
-      "./**/*.{js,json,liquid}",
+      "./**/*.{js,json,liquid,html}",
   ],
   safelist: [
     'bg-auto',
