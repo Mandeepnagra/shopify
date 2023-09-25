@@ -7,18 +7,35 @@
         {% case block.type %}
           {% when 'counter_block' %}
             <div class="col text-white">
-              <h1 id="id-{{ block.settings.counter_number }}">{{ block.settings.counter_number }}</h1>
+              <h1 class="counter_number" data-target="{{ block.settings.counter_number }}">0</h1>
               <h2>{{ block.settings.counter_heading }}</h2>
               <p>{{ block.settings.counter_description }}</p>
             </div>
-            <script>
-              counterNumber("id-{{ block.settings.counter_number }}");
-            </script>
-        {% endcase %}
+         {% endcase %}
       {% endfor %}
     </div>
   </div>
 </div>
+
+<script>
+  const counters = document.querySelectorAll('.counter_number');
+  for (let n of counters) {
+    const updateCount = () => {
+        const target = +n.getAttribute('data-target');
+        const count = +n.innerText;
+        const divider = 5000;
+        const speed = 1; 
+        const inc = target / divider;
+        if (count < target) {
+            n.innerText = Math.ceil(count + inc);
+            setTimeout(updateCount, speed);
+        } else {
+            n.innerText = target;
+        }
+    };
+    updateCount();
+  } 
+</script>
 
 {% schema %}
   {
