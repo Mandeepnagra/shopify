@@ -16,7 +16,11 @@ export default  {
       colors: {
         primary: "var(--primary-color)"
       },
-    }
+    },container: {
+      screens: {
+        xl: '1376px',
+      },
+    },
   },
   plugins: [],
 }

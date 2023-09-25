@@ -388,6 +388,9 @@ video {
     :root{
        --primary-color: #CF4646;
     }
+    html{
+      font-size: 16px;
+    }
     p, div {
   font-size: 18px;
   line-height: 25px;
@@ -498,54 +501,14 @@ video {
 .container {
   width: 100%;
 }
-@media (min-width: 640px) {
+@media (min-width: 1376px) {
 
   .\!container {
-    max-width: 640px !important;
+    max-width: 1376px !important;
   }
 
   .container {
-    max-width: 640px;
-  }
-}
-@media (min-width: 768px) {
-
-  .\!container {
-    max-width: 768px !important;
-  }
-
-  .container {
-    max-width: 768px;
-  }
-}
-@media (min-width: 1024px) {
-
-  .\!container {
-    max-width: 1024px !important;
-  }
-
-  .container {
-    max-width: 1024px;
-  }
-}
-@media (min-width: 1280px) {
-
-  .\!container {
-    max-width: 1280px !important;
-  }
-
-  .container {
-    max-width: 1280px;
-  }
-}
-@media (min-width: 1536px) {
-
-  .\!container {
-    max-width: 1536px !important;
-  }
-
-  .container {
-    max-width: 1536px;
+    max-width: 1376px;
   }
 }
 .sr-only {
@@ -658,6 +621,12 @@ video {
 }
 .m-4 {
   margin: 1rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 .mt-2 {
   margin-top: 0.5rem;
@@ -1658,9 +1627,9 @@ video {
 .align-super {
   vertical-align: super;
 }
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -2002,38 +1971,10 @@ video {
     width: 100%;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 1376px) {
 
     .sm\:container {
-      max-width: 640px;
-    }
-  }
-
-  @media (min-width: 768px) {
-
-    .sm\:container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-
-    .sm\:container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-
-    .sm\:container {
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-
-    .sm\:container {
-      max-width: 1536px;
+      max-width: 1376px;
     }
   }
 }
@@ -2055,11 +1996,6 @@ video {
   text-align: center;
 }
 @media (min-width: 640px) {
-
-  .sm\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
 
   .sm\:underline {
     text-decoration-line: underline;
@@ -2087,18 +2023,27 @@ video {
     padding: 0px;
   }
 
-  .md\:p-24 {
-    padding: 6rem;
+  .md\:p-16 {
+    padding: 4rem;
   }
 
-  .md\:py-64 {
-    padding-top: 16rem;
-    padding-bottom: 16rem;
+  .md\:py-40 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .md\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
   }
 
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:leading-\[65px\] {
+    line-height: 65px;
   }
 }
 @media (prefers-color-scheme: dark) {

@@ -6,6 +6,9 @@
     :root{
        --primary-color: #CF4646;
     }
+    html{
+      font-size: 16px;
+    }
     p, div {
       @apply text-[18px];
       @apply leading-[25px];
