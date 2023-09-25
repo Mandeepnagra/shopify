@@ -9,21 +9,21 @@
         "block1": {
           "type": "counter_block",
           "settings": {
-            "counter_number": "1358",
+            "counter_number": 1358,
             "counter_heading": "Places",
             "counter_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
         },"block2": {
           "type": "counter_block",
           "settings": {
-            "counter_number": "152",
+            "counter_number": 152,
             "counter_heading": "Jobs available",
             "counter_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
         },"block3": {
           "type": "counter_block",
           "settings": {
-            "counter_number": "25",
+            "counter_number": 25,
             "counter_heading": "Places",
             "counter_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
@@ -36,7 +36,7 @@
   },
   "order": [
     "banner",
-    "counter" 
+    "counter"  
   ]
 }
   
