@@ -1,12 +1,15 @@
 {
-    "wrapper": "section#section-careers-banner.section-careers-banner.shopify-section.section",
+    "wrapper": "div#page-careers.page-careers",
     "sections": {
       "banner": {
         "type": "banner"
+      },"counter": {
+        "type": "counter"
       }
     },
     "order": [
-      "banner"
+      "banner",
+      "counter"
     ]
   }
   

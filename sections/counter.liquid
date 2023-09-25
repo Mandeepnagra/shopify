@@ -1,7 +1,35 @@
+<div></div>
+
 {% schema %}
   {
     "name": "counter",
+    "tag": "section",
     "class": "section",
+    "max_blocks": 5,
+    "blocks": [
+       {
+         "name": "Block",
+         "type": "block",
+         "settings": [
+           {
+            "type": "number",
+            "id": "number",
+            "label": "Number",
+            "default": 20
+           },{
+            "type": "text",
+            "id": "counter_heading",
+            "label": "Heading",
+            "default": "Title"
+          },{
+            "type": "textarea",
+            "id": "counter_description",
+            "label": "Description",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
+          }
+         ]
+       }
+    ],  
     "presets": [
         {
           "name": "Counter"
