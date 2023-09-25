@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    --primary-color: #CF4646;
-}
 @layer base {
+    :root{
+       --primary-color: #CF4646;
+    }
     p, div {
       @apply text-[18px];
-      @apply leading-[3rem];
+      @apply leading-[25px];
     }
 }
