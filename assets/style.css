@@ -1730,7 +1730,7 @@ video {
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 .text-primary {
-  color: var(--primary);
+  color: var(--primary-color);
 }
 .underline {
   text-decoration-line: underline;
