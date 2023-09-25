@@ -2,16 +2,18 @@
   class="counter bg-primary">
   <div
     class="container p-6">
-  {% for block in section.blocks %}
-    {% case block.type %}
-      {% when 'counter_block' %}
-        <div class="counter_block">
-          <h1>{{ block.settings.counter_number }}</h1>
-          <h2>{{ block.settings.counter_heading }}</h2>
-          <p>{{ block.settings.counter_description }}</p>
-        </div>
-    {% endcase %}
-  {% endfor %}
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'counter_block' %}
+            <div class="col">
+              <h1>{{ block.settings.counter_number }}</h1>
+              <h2>{{ block.settings.counter_heading }}</h2>
+              <p>{{ block.settings.counter_description }}</p>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
   </div>
 </div>
 
