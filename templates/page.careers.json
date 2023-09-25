@@ -26,7 +26,10 @@
             "counter_heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
         }
-      }
+      },
+      "block_order": [
+        "block1","block2","block3"
+      ]
     }
   },
   "order": [
