@@ -1,8 +1,16 @@
 /*Customizations*/
 @font-face {
-    font-family: "Evolventa-Bold";
-    src: url('Evolventa-Bold.woff') format('woff');  
-  }
-  h1,h2,h3,h4,h5,h6{
-    font-family: Evolventa-Bold;
-  }
+  font-family: "Evolventa-Bold";
+  src: url('Evolventa-Bold.woff') format('woff');  
+}
+@font-face {
+  font-family: "NunitoSans-Regular";
+  src: url('NunitoSans-Regular.woff') format('woff');  
+}
+html,body,div,p{
+  font-family: NunitoSans-Regular;
+  letter-spacing: 0;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: Evolventa-Bold;
+}
