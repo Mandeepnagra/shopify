@@ -637,6 +637,12 @@ video {
 .mt-6 {
   margin-top: 1.5rem;
 }
+.mb-14 {
+  margin-bottom: 3.5rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -1360,6 +1366,9 @@ video {
 .rounded {
   border-radius: 0.25rem;
 }
+.rounded-\[30px\] {
+  border-radius: 30px;
+}
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -1466,6 +1475,9 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-primary {
+  background-color: var(--primary-color);
 }
 .decoration-slice {
   -webkit-box-decoration-break: slice;
@@ -1585,6 +1597,14 @@ video {
 .p-8 {
   padding: 2rem;
 }
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1634,6 +1654,10 @@ video {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .font-bold {
   font-weight: 700;
@@ -1691,6 +1715,9 @@ video {
   --tw-numeric-fraction: stacked-fractions;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
+.leading-\[14px\] {
+  line-height: 14px;
+}
 .text-\[\#336699\]\/\[\.35\] {
   color: rgb(51 102 153 / .35);
 }
@@ -1700,6 +1727,10 @@ video {
 }
 .text-primary {
   color: var(--primary-color);
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -2051,6 +2082,10 @@ video {
 
   .md\:pr-\[5\.625rem\] {
     padding-right: 5.625rem;
+  }
+
+  .md\:pr-\[5\.75rem\] {
+    padding-right: 5.75rem;
   }
 
   .md\:text-7xl {
