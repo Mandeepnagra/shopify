@@ -1,8 +1,8 @@
 <div class="timeline">
     <div
         class="container">
+        <h3>{{ section.settings.timeline_heading }}</h3>
         <div class="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 md:gap-6">
-            <h3>{{ block.settings.timeline_heading }}</h3>
             {% for block in section.blocks %}
                 {% case block.type %}
                   {% when 'timeline_block' %}
