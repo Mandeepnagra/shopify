@@ -6,7 +6,7 @@
             {% for block in section.blocks %}
                 {% case block.type %}
                   {% when 'timeline_block' %}
-                    <div class="flex text-center pb-6 md:pb-14">
+                    <div class="flex {{block.settings.timeline_image_position}} text-center pb-6 md:pb-14">
                         <div>
                             <div class="text-primary year Evolventa-Bold text-4xl pt-6 md:pt-20 md:text-[7.625rem] md:leading-[65px]" data-target="{{ block.settings.timeline_year }}">{{ block.settings.timeline_year }}</div>
                             <p>{{ block.settings.timeline_description }}</p>
