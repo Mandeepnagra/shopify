@@ -96,6 +96,43 @@
       "type":"careers",
       "settings": {
         "careers_heading": "Open Roles"
+      },"blocks": {
+        "block1": {
+          "type": "job_block",
+          "settings": {
+            "job_title": "Lorem ipsum 1"
+          }
+        },
+        "block2": {
+          "type": "job_block",
+          "settings": {
+            "job_title": "Lorem ipsum 2"
+          }
+        },
+        "block3": {
+          "type": "job_block",
+          "settings": {
+            "job_title": "Lorem ipsum 3"
+          }
+        },
+        "block4": {
+          "type": "job_block",
+          "settings": {
+            "job_title": "Lorem ipsum 4"
+          }
+        },
+        "block5": {
+          "type": "job_block",
+          "settings": {
+            "job_title": "Lorem ipsum 5"
+          }
+        },
+        "block6": {
+          "type": "job_block",
+          "settings": {
+            "job_title": "Lorem ipsum 6"
+          }
+        }
       }
     }
   },

@@ -2,6 +2,14 @@
     <div
         class="container text-center px-2 md:px-0 md:pt-[120px] md:pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
+        <ul>
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'job_block' %}
+                        <li>{{ block.settings.job_title }}</li>
+                {% endcase %}
+            {% endfor %}
+        </ul>
     </div>
 </div>
 
