@@ -2,7 +2,10 @@
   "wrapper": "div#page-careers.page-careers",
   "sections": {
     "banner": {
-      "type": "banner"
+      "type": "banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/bg-img.jpg"
+      }
     },"counter": {
       "type": "counter",
       "blocks": {

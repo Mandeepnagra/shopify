@@ -3,8 +3,6 @@
   style='background-image:url(
   {%- if section.settings.image != blank -%}
     {{ section.settings.image | image_url }}
-  {% else %}
-  {{ 'bg-img.jpg' | asset_url }}
   {%- endif -%}
   )'>
   <div
