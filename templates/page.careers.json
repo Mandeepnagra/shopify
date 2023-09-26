@@ -38,29 +38,33 @@
         "block1": {
           "type": "timeline_block",
           "settings": {
+            "timeline_image": "shopify:\/\/shop_images\/2019.png",
+            "timeline_image_position": "right",
             "timeline_year": 2016,
-            "timeline_imgage_position": "right",
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
         },"block2": {
           "type": "timeline_block",
           "settings": {
+            "timeline_image": "",
+            "timeline_image_position": "right",
             "timeline_year": 2019,
-            "timeline_imgage_position": "right",
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
         },"block3": {
           "type": "timeline_block",
           "settings": {
+            "timeline_image": "",
+            "timeline_image_position":"left",
             "timeline_year": 2021,
-            "timeline_imgage_position":"left",
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
         },"block4": {
           "type": "timeline_block",
           "settings": {
+            "timeline_image": "",
+            "timeline_image_position": "left",
             "timeline_year": 2023,
-            "timeline_imgage_position": "left",
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
         }
