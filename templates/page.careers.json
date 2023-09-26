@@ -37,6 +37,9 @@
       ]
     },"timeline": {
       "type": "timeline",
+      "settings": {
+        "timeline_heading": "We are transforming the world."
+      },
       "blocks": {
         "block1": {
           "type": "timeline_block",
