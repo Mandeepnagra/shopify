@@ -94,9 +94,7 @@
       }
     },"careers":{
       "type":"careers",
-      "settings": {
-        "careers_heading": "Open Roles"
-      },"blocks": {
+      "blocks": {
         "block1": {
           "type": "job_block",
           "settings": {
@@ -133,6 +131,8 @@
             "job_title": "Lorem ipsum 6"
           }
         }
+      },"settings": {
+        "careers_heading": "Open Roles"
       }
     }
   },
