@@ -6,7 +6,8 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/bg-img.jpg"
       }
-    },"counter": {
+    },
+    "counter": {
       "type": "counter",
       "blocks": {
         "block1": {
@@ -16,14 +17,16 @@
             "counter_heading": "Places",
             "counter_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
-        },"block2": {
+        },
+        "block2": {
           "type": "counter_block",
           "settings": {
             "counter_number": 152,
             "counter_heading": "Jobs available",
             "counter_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
-        },"block3": {
+        },
+        "block3": {
           "type": "counter_block",
           "settings": {
             "counter_number": 25,
@@ -33,13 +36,15 @@
         }
       },
       "block_order": [
-        "block1","block2","block3"
-      ]
-    },"timeline": {
-      "type": "timeline",
+        "block1",
+        "block2",
+        "block3"
+      ],
       "settings": {
-        "timeline_heading": "We are transforming the world."
-      },
+      }
+    },
+    "timeline": {
+      "type": "timeline",
       "blocks": {
         "block1": {
           "type": "timeline_block",
@@ -49,7 +54,8 @@
             "timeline_year": 2016,
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
-        },"block2": {
+        },
+        "block2": {
           "type": "timeline_block",
           "settings": {
             "timeline_image": "shopify:\/\/shop_images\/2019.jpg",
@@ -57,15 +63,17 @@
             "timeline_year": 2019,
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
-        },"block3": {
+        },
+        "block3": {
           "type": "timeline_block",
           "settings": {
             "timeline_image": "shopify:\/\/shop_images\/2021.jpg",
-            "timeline_image_position":"flex-row",
+            "timeline_image_position": "flex-row",
             "timeline_year": 2021,
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
-        },"block4": {
+        },
+        "block4": {
           "type": "timeline_block",
           "settings": {
             "timeline_image": "shopify:\/\/shop_images\/2023.jpg",
@@ -76,20 +84,19 @@
         }
       },
       "block_order": [
-        "block1","block2","block3","block4"
-      ]
-    },"careers": {
-      "type": "careers",
+        "block1",
+        "block2",
+        "block3",
+        "block4"
+      ],
       "settings": {
-        "careers_heading": "Open roles"
+        "timeline_heading": "We are transforming the world."
       }
     }
   },
   "order": [
     "banner",
     "counter",
-    "timeline",
-    "careers"  
+    "timeline"
   ]
 }
-  

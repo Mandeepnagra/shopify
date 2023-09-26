@@ -26,6 +26,7 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -41,6 +42,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
@@ -71,7 +73,14 @@
       "type": "banner",
       "settings": {
         "image": "shopify:\/\/shop_images\/bg-img.jpg",
-        "background-repeat": "repeat"
+        "background_repeat": "repeat",
+        "background_position": "auto",
+        "banner_heading": "Shopify Developer Test",
+        "banner_subheading": "Talent wanted",
+        "banner_description": "Craft experiences that customers rave about. Our customers are at the heart of everything we do. Understand the market, analyze trends, and deliver something better.",
+        "button_label": "View Page",
+        "button_link": "shopify:\/\/pages\/careers",
+        "align_content": "center"
       }
     }
   },
