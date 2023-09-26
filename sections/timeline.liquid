@@ -1,0 +1,39 @@
+<div class="timeline">
+</div>
+
+{% schema %}
+  {
+    "name": "timeline",
+    "tag": "section",
+    "class": "section",
+    "max_blocks": 4,
+    "blocks": [
+       {
+         "name": "Timeline Block",
+         "type": "timeline_block",
+         "settings": [
+            {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Timeline Image"
+            },{
+            "type": "number",
+            "id": "timeline_year",
+            "label": "Year",
+            "default": 20
+           },{
+            "type": "textarea",
+            "id": "timeline_description",
+            "label": "Description",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
+          }
+         ]
+       }
+    ],    
+    "presets": [
+        {
+          "name": "Timeline"
+        }
+      ]
+  }
+{% endschema %}

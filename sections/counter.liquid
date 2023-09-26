@@ -1,14 +1,14 @@
 <div
   class="counter bg-primary">
   <div
-    class="container p-6">
-    <div class="grid grid-cols-1 md:grid-cols-3">
+    class="container">
+    <div class="grid grid-cols-1 md:grid-cols-3 md:gap-6">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'counter_block' %}
-            <div class="col text-white">
-              <h1 class="counter_number" data-target="{{ block.settings.counter_number }}">0</h1>
-              <h2>{{ block.settings.counter_heading }}</h2>
+            <div class="col text-white text-center pb-6 md:pb-14">
+              <div class="counter_number text-4xl pt-6 md:pt-20 md:text-[7.625rem] md:leading-[65px]" data-target="{{ block.settings.counter_number }}">0</div>
+              <h3 class="mb-2 mt-2 md:mt-9">{{ block.settings.counter_heading }}</h3>
               <p>{{ block.settings.counter_description }}</p>
             </div>
          {% endcase %}

@@ -8,9 +8,25 @@
     }
     html{
       font-size: 16px;
+      background-color: #f3f3f3;
     }
     p, div {
-      @apply text-[18px];
+      @apply text-base;
       @apply leading-[25px];
+    }
+    .container{
+      margin: 0 auto;
+    }
+    h2{
+      @apply text-6xl;
+      @apply leading-[65px];
+    }
+    h3{
+      @apply text-[28px];
+      @apply leading-[32.50px];
+    }
+    h4{
+      @apply text-lg;
+      @apply leading-[22px];
     }
 }

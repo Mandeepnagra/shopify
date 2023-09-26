@@ -20,7 +20,7 @@ export default  {
       screens: {
         xl: '1376px',
       },
-    },
+    }
   },
   plugins: [],
 }

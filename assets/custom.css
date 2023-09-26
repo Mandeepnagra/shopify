@@ -11,7 +11,7 @@ html,body,div,p{
   font-family: NunitoSans-Regular;
   letter-spacing: 0;
 }
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6, .counter_number{
   font-family: Evolventa-Bold;
   letter-spacing: 0;
 }
