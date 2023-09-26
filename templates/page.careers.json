@@ -92,11 +92,16 @@
       "settings": {
         "timeline_heading": "We are transforming the world."
       }
+    },"careers":{
+      "settings": {
+        "careers_heading": "Open Roles"
+      }
     }
   },
   "order": [
     "banner",
     "counter",
-    "timeline"
+    "timeline",
+    "careers"
   ]
 }
