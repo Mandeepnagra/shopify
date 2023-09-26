@@ -1,4 +1,18 @@
 <div class="timeline">
+    <div
+        class="container">
+        <div class="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 md:gap-6">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'counter_block' %}
+                    <div class="col text-white text-center pb-6 md:pb-14">
+                      <div class="year Evolventa-Bold text-4xl pt-6 md:pt-20 md:text-[7.625rem] md:leading-[65px]" data-target="{{ block.settings.timeline_year }}">{{ block.settings.timeline_year }}</div>
+                      <p>{{ block.settings.timeline_description }}</p>
+                    </div>
+                 {% endcase %}
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 {% schema %}
@@ -14,13 +28,27 @@
          "settings": [
             {
             "type": "image_picker",
-            "id": "image",
+            "id": "timeline_image",
             "label": "Timeline Image"
+            },{
+                "type": "select",
+                "id": "timeline_imgage_position",
+                "options": [
+                  {
+                    "value": "left",
+                    "label": "Image on left"
+                  }, {
+                    "value": "right",
+                    "label": "Image on right"
+                  }
+                ],
+                "default": "right",
+                "label": "Image Position"
             },{
             "type": "number",
             "id": "timeline_year",
             "label": "Year",
-            "default": 20
+            "default": 2023
            },{
             "type": "textarea",
             "id": "timeline_description",

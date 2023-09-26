@@ -32,11 +32,48 @@
       "block_order": [
         "block1","block2","block3"
       ]
+    },"timeline": {
+      "type": "timeline",
+      "blocks": {
+        "block1": {
+          "type": "timeline_block",
+          "settings": {
+            "timeline_year": 2016,
+            "timeline_imgage_position": "right",
+            "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
+          }
+        },"block2": {
+          "type": "timeline_block",
+          "settings": {
+            "timeline_year": 2019,
+            "timeline_imgage_position": "right",
+            "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
+          }
+        },"block3": {
+          "type": "timeline_block",
+          "settings": {
+            "timeline_year": 2021,
+            "timeline_imgage_position":"left",
+            "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
+          }
+        },"block4": {
+          "type": "timeline_block",
+          "settings": {
+            "timeline_year": 2023,
+            "timeline_imgage_position": "left",
+            "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
+          }
+        }
+      },
+      "block_order": [
+        "block1","block2","block3","block4"
+      ]
     }
   },
   "order": [
     "banner",
-    "counter"  
+    "counter",
+    "timeline"  
   ]
 }
   
