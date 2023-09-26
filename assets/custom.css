@@ -33,23 +33,29 @@ h1,h2,h3,h4,h5,h6, .Evolventa-Bold{
   background-color: var(--primary-color);
 }
 .timeline .flex-row.items-center:before {
-  left: 31%;
-  bottom: -4px;
+  left: 25%;
+  bottom: -18px;
 }
 .timeline .flex-row-reverse.items-center:before {
-  left: 69%;
-  top: -5px;
+  left: 75%;
+  top: -15px;
 }
 .timeline .flex-row.items-center:after {
-  left: 31%;
-  width: 38%;
-  bottom: 0px;
+  left: 26%;
+  width: 50%;
+  bottom: -14px;
 }
 .timeline .flex-row-reverse.items-center:after {
-  left: 70%;
-  width: 62%;
-  top: -1px;
+  left: 75%;
+  width: 65%;
+  top: -11px;
 }
 .timeline .relative.items-center:last-child:after {
   display:none;
+}
+@media (max-width: 768px){
+  .timeline .relative.items-center::after,
+  .timeline .relative.items-center::before{
+    display: none;
+  }
 }
