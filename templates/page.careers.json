@@ -53,7 +53,7 @@
           "type": "timeline_block",
           "settings": {
             "timeline_image": "shopify:\/\/shop_images\/2019.jpg",
-            "timeline_image_position": "flex-row",
+            "timeline_image_position": "flex-row-reverse",
             "timeline_year": 2019,
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }
@@ -61,7 +61,7 @@
           "type": "timeline_block",
           "settings": {
             "timeline_image": "shopify:\/\/shop_images\/2021.jpg",
-            "timeline_image_position":"flex-row-reverse",
+            "timeline_image_position":"flex-row",
             "timeline_year": 2021,
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
           }

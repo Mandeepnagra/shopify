@@ -1,14 +1,14 @@
 <div class="timeline">
     <div
-        class="container">
-        <h3>{{ section.settings.timeline_heading }}</h3>
+        class="container text-center">
+        <h2>{{ section.settings.timeline_heading }}</h2>
         <div class="grid grid-rows-2 grid-flow-col md:gap-6">
             {% for block in section.blocks %}
                 {% case block.type %}
                   {% when 'timeline_block' %}
-                    <div class="flex {{block.settings.timeline_image_position}} text-center pb-6 md:pb-14">
+                    <div class="flex {{block.settings.timeline_image_position}} items-center text-center pb-6 md:pb-14">
                         <div>
-                            <div class="text-primary year Evolventa-Bold text-4xl pt-6 md:pt-20 md:text-[7.625rem] md:leading-[65px]" data-target="{{ block.settings.timeline_year }}">{{ block.settings.timeline_year }}</div>
+                            <div class="text-primary year Evolventa-Bold text-4xl mb-2 md:text-7xl md:leading-[65px]" data-target="{{ block.settings.timeline_year }}">{{ block.settings.timeline_year }}</div>
                             <p>{{ block.settings.timeline_description }}</p>
                         </div>
                          <div>
