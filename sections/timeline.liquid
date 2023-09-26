@@ -2,16 +2,16 @@
     <div
         class="container text-center">
         <h2>{{ section.settings.timeline_heading }}</h2>
-        <div class="grid grid-rows-2 grid-flow-col md:gap-6">
+        <div class="grid max-sm:grid-cols-1 md:grid-rows-2 md:grid-flow-col ">
             {% for block in section.blocks %}
                 {% case block.type %}
                   {% when 'timeline_block' %}
-                    <div class="flex {{block.settings.timeline_image_position}} items-center text-center pb-6 md:pb-14">
-                        <div>
+                    <div class="md:flex {{block.settings.timeline_image_position}} items-center text-center relative">
+                        <div class="basis-1/2 md:p-6">
                             <div class="text-primary year Evolventa-Bold text-4xl mb-2 md:text-7xl md:leading-[65px]" data-target="{{ block.settings.timeline_year }}">{{ block.settings.timeline_year }}</div>
                             <p>{{ block.settings.timeline_description }}</p>
                         </div>
-                         <div>
+                         <div class="basis-1/2">
                             {%- if block.settings.timeline_image != blank -%}
                                 <img src="{{ block.settings.timeline_image | image_url }}" />
                             {%- endif -%}
