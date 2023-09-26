@@ -131,7 +131,15 @@
             "job_title": "Lorem ipsum 6"
           }
         }
-      },"settings": {
+      },
+      "block_order": [
+        "block1",
+        "block2",
+        "block3",
+        "block4",
+        "block5",
+        "block6"  
+      ],"settings": {
         "careers_heading": "Open Roles"
       }
     }
