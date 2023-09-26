@@ -2174,6 +2174,14 @@ video {
     padding-top: 5rem;
   }
 
+  .md\:pb-24 {
+    padding-bottom: 6rem;
+  }
+
+  .md\:pt-\[120px\] {
+    padding-top: 120px;
+  }
+
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
