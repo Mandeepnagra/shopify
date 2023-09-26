@@ -803,6 +803,16 @@ video {
 .transform-none {
   transform: none;
 }
+@keyframes ping {
+
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
 .touch-auto {
   touch-action: auto;
 }
@@ -1992,6 +2002,9 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-150 {
   transition-duration: 150ms;
 }
 .ease-in {

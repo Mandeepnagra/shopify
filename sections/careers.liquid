@@ -1,0 +1,26 @@
+<div class="careers">
+    <div
+        class="container text-center px-2 md:px-0 md:py-[120px]">
+        <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "careers",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "careers_heading",
+            "label": "Heading",
+            "default": "Open roles"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Careers Listing"
+        }
+    ]
+}

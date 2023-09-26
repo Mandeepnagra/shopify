@@ -78,12 +78,18 @@
       "block_order": [
         "block1","block2","block3","block4"
       ]
+    },"careers": {
+      "type": "careers",
+      "settings": {
+        "careers_heading": "Open roles"
+      }
     }
   },
   "order": [
     "banner",
     "counter",
-    "timeline"  
+    "timeline",
+    "careers"  
   ]
 }
   
