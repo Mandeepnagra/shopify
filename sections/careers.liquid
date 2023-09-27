@@ -5,18 +5,17 @@
         <div id="careers"> 
         {% paginate blogs.career.articles by 1 %}
             {% for article in blogs.career.articles %}
-                <div class="md:flex flex-row items-center text-center relative">
-                    <div class="basis-1/2 p-3 md:p-6">
-                        <div>
-                            {% for tag in article.tags %}
-                                {{ tag }}
-                            {% endfor %}
+                <a href="{{ article.url }}">
+                    <div class="md:flex flex-row items-center gap-y-2.5 text-left bg-white p-[7px]">
+                        <div class="basis-3/5 py-2 md:pl-5">
+                            <div class="text-primary text-[13px]">{% for tag in article.tags %}  {{ tag }} {% endfor %} </div>
+                            <h3 class="mb-3 ">{{ article.title }}</h3>
+                            <p class="mb-4 ">{{ article.excerpt }}</p>
+                            <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white hover:bg-primary hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
                         </div>
-                        <h3 class="text-primary mb-2 ">{{ article.title }}</h3>
-                        <p>{{ article.excerpt }}</p>
+                        <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
                     </div>
-                     <div class="basis-1/2"><img src="{{ article.image.src | img_url: 'medium' }}"></div>
-                </div>
+                </a>
             {% endfor %}
             {% if paginate.next %}
                 <div id="loadMore"><a href="{{ paginate.next.url }}">Load More</a></div>
