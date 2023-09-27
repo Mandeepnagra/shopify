@@ -5,7 +5,18 @@
         <div id="careers"> 
         {% paginate blogs.career.articles by 1 %}
             {% for article in blogs.career.articles %}
-                <div>{{- article.title | link_to: article.url }}</div>
+                <div class="md:flex flex-row items-center text-center relative">
+                    <div class="basis-1/2 p-3 md:p-6">
+                        <div>
+                            {% for tag in article.tags %}
+                                {{ tag }}
+                            {% endfor %}
+                        </div>
+                        <h3 class="text-primary mb-2 ">{{ article.title }}</h3>
+                        <p>{{ article.excerpt }}</p>
+                    </div>
+                     <div class="basis-1/2"><img src="{{ article.image.src | img_url: 'medium' }}"></div>
+                </div>
             {% endfor %}
             {% if paginate.next %}
                 <div id="loadMore"><a href="{{ paginate.next.url }}">Load More</a></div>
