@@ -41,13 +41,13 @@ h1,h2,h3,h4,h5,h6, .Evolventa-Bold{
   top: -15px;
 }
 .timeline .flex-row.items-center:after {
-  left: 26%;
+  left: 25%;
   width: 50%;
   bottom: -14px;
 }
 .timeline .flex-row-reverse.items-center:after {
   left: 75%;
-  width: 65%;
+  width: 54%;
   top: -11px;
 }
 .timeline .relative.items-center:last-child:after {
