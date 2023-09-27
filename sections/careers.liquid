@@ -2,21 +2,39 @@
     <div
         class="container text-center px-2 md:px-0 md:pt-[120px] md:pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
-        <ul>
-            {% paginate section.blocks by 2 %}
-                {% for block in section.blocks %}
-                    {% case block.type %}
-                        {% when 'job_block' %}
-                            <li>{{ block.settings.job_title }}</li>
-                    {% endcase %}
-                {% endfor %}
-                {% if paginate.next %}
-                    <div id="more"><p>&darr; <a href="{{ paginate.next.url }}">More</a></p></div>
-                {% endif %}
-            {% endpaginate %}
-        </ul>
+        <div id="careers"> 
+        {% paginate blogs.career.articles by 1 %}
+            {% for article in blogs.career.articles %}
+                <div>{{- article.title | link_to: article.url }}</div>
+            {% endfor %}
+            {% if paginate.next %}
+                <div id="loadMore"><a href="{{ paginate.next.url }}">Load More</a></div>
+            {% endif %}
+        {% endpaginate %}
+        </div>
     </div>
 </div>
+
+<script>
+    jQuery(document).ready(function ($) {
+        $(document).on('click', '#loadMore a', function(e) {
+            e.preventDefault();
+            let moreButon = $(this).parent();
+            let nextUrl = $(this).attr("href");
+            $.ajax({
+                url: nextUrl,
+                type: 'GET',
+                beforeSend: function() {
+                moreButon.remove();
+                }
+            })
+            .done(function(data) {
+                // Append data
+                $('#careers').append($(data).find('#careers').html());
+            });
+        });
+    });
+</script>
 
 {% schema %}
   {
@@ -31,20 +49,6 @@
             "default": "Open roles"
         }
     ],
-    "blocks": [
-        {
-          "name": "Job Block",
-          "type": "job_block",
-          "settings": [
-             {
-                "type": "text",
-                "id": "job_title",
-                "label": "Job Title",
-                "default": "Title"
-             }
-          ]
-        }
-     ], 
     "presets": [
         {
           "name": "Careers Listing"
