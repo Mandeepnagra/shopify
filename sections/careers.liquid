@@ -1,7 +1,13 @@
 <div class="careers">
     <div
-        class="container text-center px-2 md:px-0 pt-6 md:pt-[120px] md:pb-24">
+        class="container text-center px-2 md:px-0 pt-6 md:pt-[120px] pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
+
+        <ul class="flex items-center space-x-[29px]">
+            {% for link in linklists.top-menu.links %}
+              <li class="text-sm hover:text-primary"><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %} 
+        </ul>
 
         <form action="/search" method="get" role="search">
             <input type="hidden" name="type" value="article" />
@@ -18,12 +24,12 @@
         <div id="careers"> 
         {% paginate blogs.career.articles by 4 %}
             {% for article in blogs.career.articles %}
-                <a class="group md:flex flex-row items-center gap-y-2.5 text-left bg-white hover:bg-black hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
+                <a class="group block md:flex flex-row items-center gap-y-2.5 text-left bg-white md-hover:bg-black hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
                     <div class="basis-3/5 py-2 md:pl-5">
                         <div class="text-primary uppercase text-[13px]">{% for tag in article.tags %}  {{ tag }} {% endfor %} </div>
-                        <h3 class="mb-3 group-hover:text-white">{{ article.title }}</h3>
-                        <p class="mb-4 group-hover:text-white">{{ article.excerpt }}</p>
-                        <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white group-hover:bg-primary group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
+                        <h3 class="mb-3 md-group-hover:text-white">{{ article.title }}</h3>
+                        <p class="mb-4 md-group-hover:text-white">{{ article.excerpt }}</p>
+                        <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white md-group-hover:bg-primary md-group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
                     </div>
                     <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
                 </a>
@@ -76,7 +82,32 @@
             "id": "button_label",
             "label": "Load More Button Label",
             "default": "Load More"
-          }
+        },{
+            "type": "select",
+            "id": "articles_cat",
+            "options": [
+              {
+                "value": "career",
+                "label": "Career"
+              }
+            ],
+            "default": "career",
+            "label": "Articles Category"
+        }
+    ],
+    "max_blocks": 6,
+    "blocks": [
+       {
+         "name": "Career Article Tags",
+         "type": "job_block",
+         "settings": [
+            {
+            "type": "text",
+            "id": "job_block_tag",
+            "label": "Tag Name"
+           }
+         ]
+       }
     ],
     "presets": [
         {
