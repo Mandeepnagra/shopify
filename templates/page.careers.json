@@ -96,27 +96,27 @@
       "type":"careers",
       "blocks": {
         "block1": {
-          "type": "job_block_tag",
+          "type": "job_block",
           "settings": {
-            "job_title": "Marketing"
+            "job_block_tag": "Marketing"
           }
         },
         "block2": {
-          "type": "job_block_tag",
+          "type": "job_block",
           "settings": {
-            "job_title": "Customer Service"
+            "job_block_tag": "Customer Service"
           }
         },
         "block3": {
-          "type": "job_block_tag",
+          "type": "job_block",
           "settings": {
-            "job_title": "Warehouse"
+            "job_block_tag": "Warehouse"
           }
         },
         "block4": {
-          "type": "job_block_tag",
+          "type": "job_block",
           "settings": {
-            "job_title": "Developers"
+            "job_block_tag": "Developers"
           }
         }
       },
