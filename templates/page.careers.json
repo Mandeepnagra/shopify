@@ -98,37 +98,25 @@
         "block1": {
           "type": "job_block",
           "settings": {
-            "job_title": "Lorem ipsum 1"
+            "job_title": "Marketing"
           }
         },
         "block2": {
           "type": "job_block",
           "settings": {
-            "job_title": "Lorem ipsum 2"
+            "job_title": "Customer Service"
           }
         },
         "block3": {
           "type": "job_block",
           "settings": {
-            "job_title": "Lorem ipsum 3"
+            "job_title": "Warehouse"
           }
         },
         "block4": {
           "type": "job_block",
           "settings": {
-            "job_title": "Lorem ipsum 4"
-          }
-        },
-        "block5": {
-          "type": "job_block",
-          "settings": {
-            "job_title": "Lorem ipsum 5"
-          }
-        },
-        "block6": {
-          "type": "job_block",
-          "settings": {
-            "job_title": "Lorem ipsum 6"
+            "job_title": "Developers"
           }
         }
       },
@@ -136,9 +124,7 @@
         "block1",
         "block2",
         "block3",
-        "block4",
-        "block5",
-        "block6"  
+        "block4"
       ],"settings": {
         "careers_heading": "Open Roles"
       }
