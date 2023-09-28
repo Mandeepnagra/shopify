@@ -96,25 +96,25 @@
       "type":"careers",
       "blocks": {
         "block1": {
-          "type": "job_block",
+          "type": "job_block_tag",
           "settings": {
             "job_title": "Marketing"
           }
         },
         "block2": {
-          "type": "job_block",
+          "type": "job_block_tag",
           "settings": {
             "job_title": "Customer Service"
           }
         },
         "block3": {
-          "type": "job_block",
+          "type": "job_block_tag",
           "settings": {
             "job_title": "Warehouse"
           }
         },
         "block4": {
-          "type": "job_block",
+          "type": "job_block_tag",
           "settings": {
             "job_title": "Developers"
           }
