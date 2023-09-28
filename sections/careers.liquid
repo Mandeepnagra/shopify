@@ -1,24 +1,25 @@
 <div class="careers">
     <div
-        class="container text-center px-2 md:px-0 md:pt-[120px] md:pb-24">
+        class="container text-center px-2 md:px-0 pt-6 md:pt-[120px] md:pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
         <div id="careers"> 
-        {% paginate blogs.career.articles by 1 %}
+        {% paginate blogs.career.articles by 4 %}
             {% for article in blogs.career.articles %}
-                <a href="{{ article.url }}">
-                    <div class="md:flex flex-row items-center gap-y-2.5 text-left bg-white p-[7px]">
-                        <div class="basis-3/5 py-2 md:pl-5">
-                            <div class="text-primary text-[13px]">{% for tag in article.tags %}  {{ tag }} {% endfor %} </div>
-                            <h3 class="mb-3 ">{{ article.title }}</h3>
-                            <p class="mb-4 ">{{ article.excerpt }}</p>
-                            <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white hover:bg-primary hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
-                        </div>
-                        <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
+                <a class="group md:flex flex-row items-center gap-y-2.5 text-left bg-white hover:bg-black hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
+                    <div class="basis-3/5 py-2 md:pl-5">
+                        <div class="text-primary uppercase text-[13px]">{% for tag in article.tags %}  {{ tag }} {% endfor %} </div>
+                        <h3 class="mb-3 group-hover:text-white">{{ article.title }}</h3>
+                        <p class="mb-4 group-hover:text-white">{{ article.excerpt }}</p>
+                        <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white group-hover:bg-primary group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
                     </div>
+                    <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
                 </a>
             {% endfor %}
             {% if paginate.next %}
-                <div id="loadMore"><a href="{{ paginate.next.url }}">Load More</a></div>
+                <div id="loadMore">
+                    <a class="inline-block mt-7 px-11 md:px-16 py-3.5 border border-solid border-primary text-white bg-primary hover:bg-white hover:text-primary text-sm leading-[14px] uppercase rounded-[30px]"
+                    href="{{ paginate.next.url }}">{{ section.settings.button_label }}</a>
+                </div>
             {% endif %}
         {% endpaginate %}
         </div>
@@ -57,7 +58,12 @@
             "id": "careers_heading",
             "label": "Heading",
             "default": "Open roles"
-        }
+        }, {
+            "type": "text",
+            "id": "button_label",
+            "label": "Load More Button Label",
+            "default": "Load More"
+          }
     ],
     "presets": [
         {
