@@ -2,6 +2,19 @@
     <div
         class="container text-center px-2 md:px-0 pt-6 md:pt-[120px] md:pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
+
+        <form action="/search" method="get" role="search">
+            <input type="hidden" name="type" value="article" />
+            <div class="input-group--underline">
+              <input class="input-group__field" type="search" name="q" value="{{ search.terms | escape }}" placeholder="search" aria-label="search">
+              <div class="input-group__btn">
+                <button type="submit" class="btn btn--clear btn--square">
+                  <span class="icon__fallback-text">search</span>
+                </button>
+              </div>
+            </div>
+        </form>
+
         <div id="careers"> 
         {% paginate blogs.career.articles by 4 %}
             {% for article in blogs.career.articles %}
