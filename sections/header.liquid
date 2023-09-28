@@ -156,7 +156,47 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+  <header class="">
+  <div class="bg-black">
+    <div class="container text-white text-right flex flex-row items-center py-2.5 justify-end  space-x-[165px]">
+      <ul class="flex items-center space-x-[29px]">
+      {% for link in linklists.top-menu.links %}
+        <li class="text-sm hover:text-primary"><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %} 
+      </ul>
+      {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+        <noscript class="small-hide medium-hide">
+          {%- form 'localization', id: 'HeaderLanguageMobileFormNoScript', class: 'localization-form' -%}
+            <div class="localization-form__select">
+              <h2 class="visually-hidden" id="HeaderLanguageMobileLabelNoScript">{{ 'localization.language_label' | t }}</h2>
+              <select class="localization-selector link" name="locale_code" aria-labelledby="HeaderLanguageMobileLabelNoScript">
+                {%- for language in localization.available_languages -%}
+                  <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
+                    {{ language.endonym_name | capitalize }}
+                  </option>
+                {%- endfor -%}
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+            <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
+          {%- endform -%}
+        </noscript>
+
+        <localization-form class="small-hide medium-hide no-js-hidden">
+          {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+            <div>
+              <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+              {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
+            </div>
+          {%- endform -%}
+        </localization-form>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="">
+    <div class="container flex flex-row items-center py-2.5">
+   
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
@@ -267,33 +307,6 @@
           </localization-form>
         {% endif %}
 
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <noscript class="small-hide medium-hide">
-            {%- form 'localization', id: 'HeaderLanguageMobileFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="HeaderLanguageMobileLabelNoScript">{{ 'localization.language_label' | t }}</h2>
-                <select class="localization-selector link" name="locale_code" aria-labelledby="HeaderLanguageMobileLabelNoScript">
-                  {%- for language in localization.available_languages -%}
-                    <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
-                      {{ language.endonym_name | capitalize }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
-            {%- endform -%}
-          </noscript>
-
-          <localization-form class="small-hide medium-hide no-js-hidden">
-            {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
-              <div>
-                <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
-                {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
       </div>
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
@@ -338,6 +351,8 @@
         {%- endif -%}
       </a>
     </div>
+  </div>
+</div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
