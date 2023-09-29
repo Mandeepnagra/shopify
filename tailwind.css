@@ -38,4 +38,21 @@
     #jobCats li.active{
       @apply text-primary;
     }
+    nav ul{
+      @apply gap-x-12;
+    }
+    nav ul li{
+      @apply text-sm;
+      @apply leading-[19px];
+      @apply uppercase;
+      @apply font-semibold;
+      @apply hover:text-primary;
+    }
+    .header__inline-menu details ul{
+      @apply absolute;
+      @apply top-5;
+    }
+    .menu-drawer{
+      @apply bg-white;
+    }
 }

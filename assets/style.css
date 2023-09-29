@@ -434,6 +434,28 @@ video {
     #jobCats li.active {
   color: var(--primary-color);
 }
+    nav ul {
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+}
+    nav ul li {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  line-height: 19px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+    nav ul li:hover {
+  color: var(--primary-color);
+}
+    .header__inline-menu details ul {
+  position: absolute;
+  top: 1.25rem;
+}
+    .menu-drawer {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
 
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
@@ -1221,11 +1243,6 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(29px * var(--tw-space-x-reverse));
   margin-left: calc(29px * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-x-\[57px\] > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(57px * var(--tw-space-x-reverse));
-  margin-left: calc(57px * calc(1 - var(--tw-space-x-reverse)));
 }
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 1;
@@ -2201,6 +2218,10 @@ video {
 
   .md\:mb-14 {
     margin-bottom: 3.5rem;
+  }
+
+  .md\:mr-\[38px\] {
+    margin-right: 38px;
   }
 
   .md\:mt-9 {
