@@ -3,31 +3,32 @@
         class="container text-center px-2 md:px-0 pt-6 md:pt-[120px] pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
         
-        {% assign tagList = '' %} {%comment%} tagList - For later use in +More{%endcomment%}
-        <ul id="jobCats" class="flex items-center space-x-[29px]">
-            <li class="all active">All</li>
-            {% for block in section.blocks %}
-                {% case block.type %}
-                    {% when 'job_block' %}
-                    {% assign catClassName = block.settings.job_block_tag | remove:" " %}
-                    <li class="{{catClassName}}">{{ block.settings.job_block_tag }}</li>
-                    {% assign tagList = tagList | append: ',' | append: block.settings.job_block_tag %}
-                {% endcase %}
-            {% endfor %} 
-            <li class="more">+More</li>
-        </ul>
-        
-        <form action="/search" method="get" role="search">
-            <input type="hidden" name="type" value="article" />
-            <div class="input-group--underline">
-              <input class="input-group__field" type="search" name="q" value="{{ search.terms | escape }}" placeholder="search" aria-label="search">
-              <div class="input-group__btn">
-                <button type="submit" class="btn btn--clear btn--square">
-                  <span class="icon__fallback-text">search</span>
-                </button>
-              </div>
-            </div>
-        </form>
+        <div>
+            {% assign tagList = '' %} {%comment%} tagList - For later use in +More{%endcomment%}
+            <ul id="jobCats" class="md:flex items-center md:space-x-[57px] Evolventa-Bold max-sm:mb-3">
+                <li class="all active">All</li>
+                {% for block in section.blocks %}
+                    {% case block.type %}
+                        {% when 'job_block' %}
+                        {% assign catClassName = block.settings.job_block_tag | remove:" " %}
+                        <li class="{{catClassName}}">{{ block.settings.job_block_tag }}</li>
+                        {% assign tagList = tagList | append: ',' | append: block.settings.job_block_tag %}
+                    {% endcase %}
+                {% endfor %} 
+                <li class="more">+More</li>
+            </ul>   
+            <form action="/search" method="get" role="search">
+                <input type="hidden" name="type" value="article" />
+                <div class="input-group--underline">
+                <input class="input-group__field" type="search" name="q" value="{{ search.terms | escape }}" placeholder="search" aria-label="search">
+                <div class="input-group__btn">
+                    <button type="submit" class="">
+                       s
+                    </button>
+                </div>
+                </div>
+            </form>
+        </div>
 
         <div id="allCareers">
             <div id="careers" class="all"> 
@@ -38,7 +39,7 @@
                             <div class="basis-3/5 py-2 md:pl-5">
                                 <div class="text-primary uppercase text-[13px]">{% assign check = 0 %}{% for tag in article.tags %}{% unless check == 0 %}, {% endunless %}{{tag}}{% assign check = 1 %}{% endfor %}</div>
                                 <h3 class="mb-3 md:group-hover:text-white">{{ article.title }}</h3>
-                                <p class="mb-4 md:group-hover:text-white">{{ article.excerpt }}</p>
+                                <p class="mb-4 md:group-hover:text-white">{{ article.excerpt | truncate: 90 }}</p>
                                 <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white md:group-hover:bg-primary md:group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
                             </div>
                             <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
@@ -67,7 +68,7 @@
                                     <div class="basis-3/5 py-2 md:pl-5">
                                         <div class="text-primary uppercase text-[13px]">{% assign check = 0 %}{% for tag in article.tags %}{% unless check == 0 %}, {% endunless %}{{tag}}{% assign check = 1 %}{% endfor %}</div>
                                         <h3 class="mb-3 md:group-hover:text-white">{{ article.title }}</h3>
-                                        <p class="mb-4 md:group-hover:text-white">{{ article.excerpt }}</p>
+                                        <p class="mb-4 md:group-hover:text-white">{{ article.excerpt | truncate: 90  }}</p>
                                         <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white md:group-hover:bg-primary md:group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
                                     </div>
                                     <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
@@ -100,7 +101,7 @@
                                 <div class="basis-3/5 py-2 md:pl-5">
                                     <div class="text-primary uppercase text-[13px]">{% assign check = 0 %}{% for tag in article.tags %}{% unless check == 0 %}, {% endunless %}{{tag}}{% assign check = 1 %}{% endfor %}</div>
                                     <h3 class="mb-3 md:group-hover:text-white">{{ article.title }}</h3>
-                                    <p class="mb-4 md:group-hover:text-white">{{ article.excerpt }}</p>
+                                    <p class="mb-4 md:group-hover:text-white">{{ article.excerpt | truncate: 90  }}</p>
                                     <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white md:group-hover:bg-primary md:group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
                                 </div>
                                 <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>

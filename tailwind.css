@@ -29,4 +29,13 @@
       @apply text-lg;
       @apply leading-[22px];
     }
+    #jobCats li{
+      @apply text-lg;
+      @apply leading-[22px];
+      @apply hover:text-primary;
+      @apply cursor-pointer;
+    }
+    #jobCats li.active{
+      @apply text-primary;
+    }
 }
