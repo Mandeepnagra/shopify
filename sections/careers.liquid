@@ -2,13 +2,21 @@
     <div
         class="container text-center px-2 md:px-0 pt-6 md:pt-[120px] pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
-
-        <ul class="flex items-center space-x-[29px]">
-            {% for link in linklists.top-menu.links %}
-              <li class="text-sm hover:text-primary"><a href="{{ link.url }}">{{ link.title }}</a></li>
+        
+        {% assign tagList = '' %} {%comment%} tagList - For later use in +More{%endcomment%}
+        <ul id="jobCats" class="flex items-center space-x-[29px]">
+            <li class="all active">All</li>
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'job_block' %}
+                    {% assign catClassName = block.settings.job_block_tag | remove:" " %}
+                    <li class="{{catClassName}}">{{ block.settings.job_block_tag }}</li>
+                    {% assign tagList = tagList | append: ',' | append: block.settings.job_block_tag %}
+                {% endcase %}
             {% endfor %} 
+            <li class="more">+More</li>
         </ul>
-
+        
         <form action="/search" method="get" role="search">
             <input type="hidden" name="type" value="article" />
             <div class="input-group--underline">
@@ -21,27 +29,98 @@
             </div>
         </form>
 
-        <div id="careers"> 
-        {% paginate blogs.career.articles by 4 %}
-            {% for article in blogs.career.articles %}
-                <a class="group block md:flex flex-row items-center gap-y-2.5 text-left bg-white md-hover:bg-black hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
-                    <div class="basis-3/5 py-2 md:pl-5">
-                        <div class="text-primary uppercase text-[13px]">{% for tag in article.tags %}  {{ tag }} {% endfor %} </div>
-                        <h3 class="mb-3 md-group-hover:text-white">{{ article.title }}</h3>
-                        <p class="mb-4 md-group-hover:text-white">{{ article.excerpt }}</p>
-                        <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white md-group-hover:bg-primary md-group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
+        <div id="allCareers">
+            <div id="careers" class="all"> 
+                {% comment %} For All Types {% endcomment %} 
+                {% paginate blogs.career.articles by 4 %}
+                    {% for article in blogs.career.articles %}
+                        <a class="group block md:flex flex-row items-center gap-y-2.5 text-left bg-white md:hover:bg-black hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
+                            <div class="basis-3/5 py-2 md:pl-5">
+                                <div class="text-primary uppercase text-[13px]">{% assign check = 0 %}{% for tag in article.tags %}{% unless check == 0 %}, {% endunless %}{{tag}}{% assign check = 1 %}{% endfor %}</div>
+                                <h3 class="mb-3 md:group-hover:text-white">{{ article.title }}</h3>
+                                <p class="mb-4 md:group-hover:text-white">{{ article.excerpt }}</p>
+                                <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white md:group-hover:bg-primary md:group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
+                            </div>
+                            <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
+                        </a>
+                    {% endfor %}
+                    {% if paginate.next %}
+                        <div id="loadMore">
+                            <a class="inline-block mt-7 px-11 md:px-16 py-3.5 border border-solid border-primary text-white bg-primary hover:bg-white hover:text-primary text-sm leading-[14px] uppercase rounded-[30px]"
+                            href="{{ paginate.next.url }}">{{ section.settings.button_label }}</a>
+                        </div>
+                    {% endif %}
+                {% endpaginate %}         
+            </div>
+
+            {% comment %} For Selected Tags {% endcomment %}
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'job_block' %}
+                    {% assign jobsCount = 0 %}
+                    {% assign catClassName = block.settings.job_block_tag | remove:" " %}
+                    <div class="hidden {{ catClassName }}">      
+                        {% for article in blogs.career.articles %}
+                            {% if article.tags contains block.settings.job_block_tag  %} 
+                                {% assign jobsCount = jobsCount | plus: 1 %} 
+                                <a class="group block md:flex flex-row items-center gap-y-2.5 text-left bg-white md:hover:bg-black hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
+                                    <div class="basis-3/5 py-2 md:pl-5">
+                                        <div class="text-primary uppercase text-[13px]">{% assign check = 0 %}{% for tag in article.tags %}{% unless check == 0 %}, {% endunless %}{{tag}}{% assign check = 1 %}{% endfor %}</div>
+                                        <h3 class="mb-3 md:group-hover:text-white">{{ article.title }}</h3>
+                                        <p class="mb-4 md:group-hover:text-white">{{ article.excerpt }}</p>
+                                        <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white md:group-hover:bg-primary md:group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
+                                    </div>
+                                    <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if jobsCount == 0 %}
+                            <div class="group block md:flex flex-row items-center gap-y-2.5 text-left bg-white hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
+                                <div class="basis-3/5 py-2 md:pl-5">
+                                   <p>No jobs found.</p>
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
-                    <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
-                </a>
+                {% endcase %}
             {% endfor %}
-            {% if paginate.next %}
-                <div id="loadMore">
-                    <a class="inline-block mt-7 px-11 md:px-16 py-3.5 border border-solid border-primary text-white bg-primary hover:bg-white hover:text-primary text-sm leading-[14px] uppercase rounded-[30px]"
-                    href="{{ paginate.next.url }}">{{ section.settings.button_label }}</a>
-                </div>
-            {% endif %}
-        {% endpaginate %}
+
+
+            {% comment %} For +More {% endcomment %}
+            {% assign moreCount = 0 %}
+            {% assign tagList = tagList | remove_first: ',' |  split: ',' %}
+            <div class="hidden more">      
+                {% for article in blogs.career.articles %}
+                    {% for tag in article.tags %}
+                        {% if tagList contains tag %} 
+                            {% comment %} Skip {% endcomment %}
+                        {% else %}
+                            {% assign moreCount = moreCount | plus: 1 %} 
+                            <a class="group block md:flex flex-row items-center gap-y-2.5 text-left bg-white md:hover:bg-black hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
+                                <div class="basis-3/5 py-2 md:pl-5">
+                                    <div class="text-primary uppercase text-[13px]">{% assign check = 0 %}{% for tag in article.tags %}{% unless check == 0 %}, {% endunless %}{{tag}}{% assign check = 1 %}{% endfor %}</div>
+                                    <h3 class="mb-3 md:group-hover:text-white">{{ article.title }}</h3>
+                                    <p class="mb-4 md:group-hover:text-white">{{ article.excerpt }}</p>
+                                    <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white md:group-hover:bg-primary md:group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
+                                </div>
+                                <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                {% if moreCount == 0 %}
+                    <div class="group block md:flex flex-row items-center gap-y-2.5 text-left bg-white hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
+                        <div class="basis-3/5 py-2 md:pl-5">
+                            <p>No jobs found.</p>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+
+
         </div>
+
     </div>
 </div>
 
@@ -63,6 +142,13 @@
                 $('#careers').append($(data).find('#careers').html());
             });
         });
+        $(document).on('click', '#jobCats li', function(e) {
+            $("#jobCats li").removeClass('active');
+            var activeClass = $(this).attr("class");
+            $(this).addClass('active');
+            $("#allCareers > div").addClass('hidden');
+            $("#allCareers > div."+activeClass).removeClass('hidden');
+        });
     });
 </script>
 
@@ -82,17 +168,6 @@
             "id": "button_label",
             "label": "Load More Button Label",
             "default": "Load More"
-        },{
-            "type": "select",
-            "id": "articles_cat",
-            "options": [
-              {
-                "value": "career",
-                "label": "Career"
-              }
-            ],
-            "default": "career",
-            "label": "Articles Category"
         }
     ],
     "max_blocks": 4,

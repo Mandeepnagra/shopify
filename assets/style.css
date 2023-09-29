@@ -2338,6 +2338,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.peer\/draft:checked ~ .peer-checked\/draft\:text-sky-500 {
+  --tw-text-opacity: 1;
+  color: rgb(14 165 233 / var(--tw-text-opacity));
+}
+
 @media (prefers-color-scheme: dark) {
 
   .dark\:divide-gray-700 > :not([hidden]) ~ :not([hidden]) {
@@ -2558,6 +2563,20 @@ video {
 
   .md\:leading-\[65px\] {
     line-height: 65px;
+  }
+
+  .md\:hover\:bg-black:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  }
+
+  .group:hover .md\:group-hover\:bg-primary {
+    background-color: var(--primary-color);
+  }
+
+  .group:hover .md\:group-hover\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
 
