@@ -2484,6 +2484,18 @@ video {
   }
 }
 
+@media (min-width: 1024px) {
+
+  .lg\:px-\[60px\] {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .lg\:pl-\[38px\] {
+    padding-left: 38px;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
 
   @media (min-width: 1024px) {
