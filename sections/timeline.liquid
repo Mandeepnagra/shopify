@@ -1,4 +1,4 @@
-<div class="timeline">
+<div class="timeline" id="timeline">
     <div
         class="container text-center px-2 md:px-0 pt-6 md:pt-[120px]  md:pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.timeline_heading }}</h2>
@@ -6,9 +6,9 @@
             {% for block in section.blocks %}
                 {% case block.type %}
                   {% when 'timeline_block' %}
-                    <div class="md:flex {{block.settings.timeline_image_position}} items-center text-center relative">
+                    <div class="timeline_block opacity-0 md:flex {{block.settings.timeline_image_position}} items-center text-center relative">
                         <div class="basis-1/2 p-3 md:p-6">
-                            <div class="text-primary year Evolventa-Bold text-4xl mb-2 md:text-7xl md:leading-[65px]" data-target="{{ block.settings.timeline_year | minus: 2 }}">{{ block.settings.timeline_year }}</div>
+                            <div class="text-primary year Evolventa-Bold text-4xl mb-2 md:text-7xl md:leading-[65px]">{{ block.settings.timeline_year }}</div>
                             <p>{{ block.settings.timeline_description }}</p>
                         </div>
                          <div class="basis-1/2">
@@ -22,6 +22,35 @@
         </div>
     </div>
 </div>
+
+<script>
+  jQuery(document).ready(function ($) {
+    $.fn.isInViewportT = function () {
+      let elementTop = $(this).offset().top;
+      let elementBottom = elementTop + $(this).outerHeight();
+  
+      let viewportTop = $(window).scrollTop();
+      let viewportBottom = viewportTop + $(window).height();
+  
+      return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
+    var nowVisible = false;
+    var j = 0;
+    $(window).scroll(function () {
+      if ($('#timeline').isInViewportT()) {
+        nowVisible = true;     
+        if(nowVisible == true && j == 0){
+          var time = 500;
+          $('.timeline_block').each(function(i, obj) { 
+            setTimeout(function() {  $(this).removeClass('opacity-0')  }, time);
+            time += 500;
+          });
+          ++j;
+        }
+      }
+    }); 
+  });
+</script>
 
 {% schema %}
   {

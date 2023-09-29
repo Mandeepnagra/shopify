@@ -7,7 +7,7 @@
         {% case block.type %}
           {% when 'counter_block' %}
             <div class="col text-white text-center pb-6 md:pb-14">
-              <div class="Evolventa-Bold counter_number text-4xl pt-6 md:pt-20 md:text-[7.625rem] md:leading-[65px]" data-target="{{ block.settings.counter_number }}">{{ block.settings.counter_number }}</div>
+              <div class="Evolventa-Bold counter_number text-4xl pt-6 md:pt-20 md:text-[7.625rem] md:leading-[65px]" data-target="{{ block.settings.counter_number }}">0</div>
               <h3 class="mb-2 mt-2 md:mt-9">{{ block.settings.counter_heading }}</h3>
               <p>{{ block.settings.counter_description }}</p>
             </div>
@@ -17,6 +17,52 @@
   </div>
 </div>
 
+<script>
+
+  var inView = false;
+  var i = 0;
+
+  function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+      );
+  }
+  
+  const counterBlock = document.querySelector('#counter');
+  document.addEventListener('scroll', function () {
+    if(isInViewport(counterBlock)){
+       inView = true;
+    }
+    if(inView == true && i == 0){
+      const counters = document.querySelectorAll('.counter_number');
+      var count = 0;
+      var speed = 1;
+      for (let n of counters) {
+        const updateCount = () => {
+            const target = +n.getAttribute('data-target');
+            const divider = 5000;
+            ++count;
+            ++i;
+            if (count < target) {
+                n.innerText = Math.ceil(count);
+                setTimeout(updateCount, speed);
+            } else {
+                n.innerText = target;
+            }
+        };
+        updateCount();
+      } 
+    }
+  });
+  
+
+  
+</script>
 
 {% schema %}
   {
