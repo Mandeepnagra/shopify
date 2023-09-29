@@ -8,7 +8,7 @@
                   {% when 'timeline_block' %}
                     <div class="md:flex {{block.settings.timeline_image_position}} items-center text-center relative">
                         <div class="basis-1/2 p-3 md:p-6">
-                            <div class="text-primary year Evolventa-Bold text-4xl mb-2 md:text-7xl md:leading-[65px]" data-target="{{ block.settings.timeline_year }}">{{ block.settings.timeline_year }}</div>
+                            <div class="text-primary year Evolventa-Bold text-4xl mb-2 md:text-7xl md:leading-[65px]" data-target="{{ block.settings.timeline_year | minus: 2 }}">{{ block.settings.timeline_year }}</div>
                             <p>{{ block.settings.timeline_description }}</p>
                         </div>
                          <div class="basis-1/2">

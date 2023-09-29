@@ -17,10 +17,10 @@
                 {% endfor %} 
                 <li class="more">+More</li>
             </ul>   
-            <form class="flex bg-white rounded-[70px]" action="/search" method="get" role="search">
+            <form class="flex justify-between bg-white rounded-[70px]" action="/search" method="get" role="search">
                 <input type="hidden" name="type" value="article" />
-                <input class="bg-white rounded-l-[70px] pl-[38px] py-[17px]" type="search" name="q" value="" placeholder="Search roles" aria-label="Search roles">
-                <button class=" bg-primary text-white py-3.5 px-[60px] rounded-[70px]" type="submit" class="">
+                <input class="bg-white pl-3 rounded-l-[70px] md:pl-[38px] py-3 text-lg leading-[14px] text-[#606060]" type="search" name="q" value="" placeholder="Search roles" aria-label="Search roles">
+                <button class=" bg-primary text-white py-3.5 px-10 md:px-[60px] rounded-[70px]" type="submit" class="">
                     <svg class="icon icon-search h-5 w-5" aria-hidden="true" focusable="false">
                         <use href="#icon-search">
                     </svg>

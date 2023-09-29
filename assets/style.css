@@ -1793,6 +1793,18 @@ video {
   padding-top: 17px;
   padding-bottom: 17px;
 }
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
 .pb-24 {
   padding-bottom: 6rem;
 }
@@ -1822,6 +1834,9 @@ video {
 }
 .pl-\[38px\] {
   padding-left: 38px;
+}
+.pl-3 {
+  padding-left: 0.75rem;
 }
 .text-left {
   text-align: left;
@@ -1962,6 +1977,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-\[\#606060\] {
+  --tw-text-opacity: 1;
+  color: rgb(96 96 96 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -2389,6 +2408,11 @@ video {
     padding-bottom: 10rem;
   }
 
+  .md\:px-\[60px\] {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
   .md\:pb-14 {
     padding-bottom: 3.5rem;
   }
@@ -2415,6 +2439,18 @@ video {
 
   .md\:pt-\[120px\] {
     padding-top: 120px;
+  }
+
+  .md\:pl-\[38px\] {
+    padding-left: 38px;
+  }
+
+  .md\:pb-\[71px\] {
+    padding-bottom: 71px;
+  }
+
+  .md\:pt-\[75px\] {
+    padding-top: 75px;
   }
 
   .md\:text-7xl {
