@@ -2227,6 +2227,10 @@ video {
     grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
   .md\:gap-6 {
     gap: 1.5rem;
   }

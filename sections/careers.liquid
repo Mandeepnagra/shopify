@@ -3,7 +3,7 @@
         class="container text-center px-2 md:px-0 pt-6 md:pt-[120px] pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
         
-        <div>
+        <div class="md:flex md:justify-between">
             {% assign tagList = '' %} {%comment%} tagList - For later use in +More{%endcomment%}
             <ul id="jobCats" class="md:flex items-center md:space-x-[57px] Evolventa-Bold max-sm:mb-3">
                 <li class="all active">All</li>
@@ -19,13 +19,11 @@
             </ul>   
             <form action="/search" method="get" role="search">
                 <input type="hidden" name="type" value="article" />
-                <div class="input-group--underline">
                 <input class="input-group__field" type="search" name="q" value="{{ search.terms | escape }}" placeholder="search" aria-label="search">
                 <div class="input-group__btn">
                     <button type="submit" class="">
                        s
                     </button>
-                </div>
                 </div>
             </form>
         </div>
