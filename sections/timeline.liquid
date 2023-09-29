@@ -40,10 +40,13 @@
       if ($('#timeline').isInViewportT()) {
         nowVisible = true;     
         if(nowVisible == true && j == 0){
-          var time = 500;
+          console.log('here');
+          var time = 700;
           $('.timeline_block').each(function(i, obj) { 
-            setTimeout(function() {  $(this).removeClass('opacity-0')  }, time);
-            time += 500;
+            $(this).addClass("opacity-1").delay(time).queue(function(){
+              $(this).removeClass("opacity-0").dequeue();
+            });
+            time += 700;
           });
           ++j;
         }
