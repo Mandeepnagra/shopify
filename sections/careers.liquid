@@ -3,7 +3,7 @@
         class="container text-center px-2 md:px-0 pt-6 md:pt-[120px] pb-24">
         <h2 class="max-sm:text-4xl md:mb-14">{{ section.settings.careers_heading }}</h2>
         
-        <div class="md:flex md:justify-between">
+        <div class="md:flex md:justify-between mb-[45px]">
             {% assign tagList = '' %} {%comment%} tagList - For later use in +More{%endcomment%}
             <ul id="jobCats" class="md:flex items-center md:space-x-[57px] Evolventa-Bold max-sm:mb-3">
                 <li class="all active">All</li>
@@ -17,14 +17,14 @@
                 {% endfor %} 
                 <li class="more">+More</li>
             </ul>   
-            <form action="/search" method="get" role="search">
+            <form class="flex bg-white rounded-[70px]" action="/search" method="get" role="search">
                 <input type="hidden" name="type" value="article" />
-                <input class="input-group__field" type="search" name="q" value="{{ search.terms | escape }}" placeholder="search" aria-label="search">
-                <div class="input-group__btn">
-                    <button type="submit" class="">
-                       s
-                    </button>
-                </div>
+                <input class="bg-white rounded-l-[70px] pl-[38px] py-[17px]" type="search" name="q" value="" placeholder="Search roles" aria-label="Search roles">
+                <button class=" bg-primary text-white py-3.5 px-[60px] rounded-[70px]" type="submit" class="">
+                    <svg class="icon icon-search h-5 w-5" aria-hidden="true" focusable="false">
+                        <use href="#icon-search">
+                    </svg>
+                </button>
             </form>
         </div>
 

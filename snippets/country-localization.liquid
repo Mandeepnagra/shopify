@@ -8,19 +8,18 @@
 <div class="disclosure">
   <button
     type="button"
-    class="disclosure__button localization-form__select localization-selector link link--text caption-large"
+    class="px-[15px] pl-[15px] pr-[22px] border-2 border-solid border-black rounded-[30px]"
     aria-expanded="false"
     aria-controls="{{ localPosition }}List"
     aria-describedby="{{ localPosition }}Label"
   >
-    <span>
+    <span class="text-sm">
       {{- localization.country.currency.iso_code }}
-      {{ localization.country.currency.symbol }} | {{ localization.country.name -}}
-    </span>
+    </span> 
     {% render 'icon-caret' %}
   </button>
   <div class="disclosure__list-wrapper" hidden>
-    <ul id="{{ localPosition }}List" role="list" class="disclosure__list list-unstyled">
+    <ul id="{{ localPosition }}List" role="list" class="disclosure__list list-unstyled bg-white">
       {%- for country in localization.available_countries -%}
         <li class="disclosure__item" tabindex="-1">
           <a
@@ -32,10 +31,8 @@
             data-value="{{ country.iso_code }}"
           >
             <span class="localization-form__currency">
-              {{- country.currency.iso_code }}
-              {{ country.currency.symbol }} |</span
+              {{- country.currency.iso_code }}</span
             >
-            {{ country.name }}
           </a>
         </li>
       {%- endfor -%}

@@ -35,7 +35,20 @@ summary .icon-caret {
 #menu-drawer{
   background-color:#fff!important;
 }
-
+#HeaderLanguageForm .icon-caret {
+  right: 24px;
+  height: 7px;
+}
+.header-localization button .icon-caret {
+  height: 7px;
+    position: absolute;
+    right: 8px;
+    top: 40%;
+}
+.header__icon .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
 
 
 .timeline .relative.items-center:before{
