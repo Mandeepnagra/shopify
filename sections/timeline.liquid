@@ -24,35 +24,39 @@
 </div>
 
 <script>
-  jQuery(document).ready(function ($) {
-    $.fn.isInViewportT = function () {
-      let elementTop = $(this).offset().top;
-      let elementBottom = elementTop + $(this).outerHeight();
-  
-      let viewportTop = $(window).scrollTop();
-      let viewportBottom = viewportTop + $(window).height();
-  
-      return elementBottom > viewportTop && elementTop < viewportBottom;
-    };
-    var nowVisible = false;
-    var j = 0;
-    $(window).scroll(function () {
-      if ($('#timeline').isInViewportT()) {
-        nowVisible = true;     
-        if(nowVisible == true && j == 0){
-          console.log('here');
-          var time = 700;
-          $('.timeline_block').each(function(i, obj) { 
-            $(this).addClass("opacity-1").delay(time).queue(function(){
-              $(this).removeClass("opacity-0").dequeue();
-            });
-            time += 700;
-          });
-          ++j;
-        }
-      }
-    }); 
-  });
+  if(typeof isInViewport !== "function"){
+    function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+        );
+    }
+  }
+  var inViewT = false;
+  var iT = 0;
+  function timelineBlockScript(){
+    const timelineBlock = document.querySelector('#timeline h2');
+    if(isInViewport(timelineBlock)){
+      inViewT = true;
+    }
+    if(inViewT == true && iT == 0){
+      ++iT;
+      var time = 700;
+      const eachtimelineBlock = document.querySelectorAll('.timeline_block');
+      [].forEach.call(eachtimelineBlock, function(el) {
+        setInterval(function(){
+            el.classList.remove("opacity-0")
+        }, time);
+        time += 700;
+      });
+      
+    }
+  }
+  document.addEventListener('scroll', timelineBlockScript);
 </script>
 
 {% schema %}

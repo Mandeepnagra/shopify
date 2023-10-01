@@ -124,30 +124,42 @@
 </div>
 
 <script>
-    jQuery(document).ready(function ($) {
-        $(document).on('click', '#loadMore a', function(e) {
-            e.preventDefault();
-            let moreButon = $(this).parent();
-            let nextUrl = $(this).attr("href");
-            $.ajax({
-                url: nextUrl,
-                type: 'GET',
-                beforeSend: function() {
+    const loadMoreBtn = document.querySelector('#loadMore a');
+    loadMoreBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        let moreButon = this.parentNode;
+        let nextUrl = this.getAttribute("href");
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
                 moreButon.remove();
-                }
-            })
-            .done(function(data) {
-                // Append data
-                $('#careers').append($(data).find('#careers').html());
+                let response = this.responseText;
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(response,"text/html");
+                var moreCareers = xmlDoc.getElementById("careers");
+                document.getElementById("careers").insertAdjacentHTML("beforeend",moreCareers.innerHTML);
+            }
+        };
+        xhttp.open("GET", nextUrl, true);
+        xhttp.send();
+    });
+
+    const jobsLi = document.querySelectorAll('#jobCats li');
+    const allCareers = document.querySelectorAll('#allCareers > div');
+    document.getElementById('jobCats').addEventListener('click', function (e) {
+        if (e.target && e.target.matches("li")) {           
+            [].forEach.call(jobsLi, function(el) {
+                el.classList.remove("active");
             });
-        });
-        $(document).on('click', '#jobCats li', function(e) {
-            $("#jobCats li").removeClass('active');
-            var activeClass = $(this).attr("class");
-            $(this).addClass('active');
-            $("#allCareers > div").addClass('hidden');
-            $("#allCareers > div."+activeClass).removeClass('hidden');
-        });
+            var activeClass = e.target.getAttribute("class");
+            e.target.classList.add("active");
+            [].forEach.call(allCareers, function(el) {
+                el.classList.add("hidden");
+            });
+            const activeCareer = document.querySelector('#allCareers  div.'+activeClass);
+            activeCareer.classList.remove('hidden');
+        }
     });
 </script>
 
