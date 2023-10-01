@@ -8,28 +8,31 @@
 <div class="disclosure">
   <button
     type="button"
-    class="px-[15px] pl-[15px] pr-[22px] border-2 border-solid border-black rounded-[30px]"
+    class="px-[15px] pl-[15px] pr-[24px] border-2 border-solid border-black rounded-[30px] py-[4px] flex gap-x-2"
     aria-expanded="false"
     aria-controls="{{ localPosition }}List"
     aria-describedby="{{ localPosition }}Label"
   >
+    {% assign currency_iso = localization.country.currency.iso_code %}
+    {% render 'icon_currency', currency_iso: currency_iso %}
     <span class="text-sm">
       {{- localization.country.currency.iso_code }}
     </span> 
-    {% render 'icon-caret' %}
+    {% render 'icon-polygon' %}
   </button>
-  <div class="disclosure__list-wrapper" hidden>
-    <ul id="{{ localPosition }}List" role="list" class="disclosure__list list-unstyled bg-white">
+  <div style="border-width:0; top: 3.2rem;" class="disclosure__list-wrapper" hidden>
+    <ul id="{{ localPosition }}List" role="list" class="bg-white py-0 divide-y divide-black border border-black border-solid w-32">
       {%- for country in localization.available_countries -%}
         <li class="disclosure__item" tabindex="-1">
           <a
-            class="link link--text disclosure__link caption-large focus-inset{% if country.iso_code == localization.country.iso_code %} disclosure__link--active{% endif %}"
+            class="p-4 flex gap-x-2 text-sm{% if country.iso_code == localization.country.iso_code %} text-primary disclosure__link--active{% endif %}"
             href="#"
             {% if country.iso_code == localization.country.iso_code %}
               aria-current="true"
             {% endif %}
             data-value="{{ country.iso_code }}"
           >
+            {% render 'icon_currency', currency_iso: country.currency.iso_code %}
             <span class="localization-form__currency">
               {{- country.currency.iso_code }}</span
             >

@@ -194,9 +194,9 @@
     </div>
   </div>
 
-  <div class="main-header bg-white">
+  <div class="main-header bg-white ">
     <div class="container px-2 md:px-0">
-      <div class="flex justify-between">
+      <div class="flex justify-between h-[70px]">
         <div class="flex items-center">
           {%- liquid
             if section.settings.menu != blank
@@ -279,7 +279,7 @@
           {%- endif -%}
         </div>
 
-        <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %} pr-0">
+        <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %} pr-0 gap-4">
           <div class="desktop-localization-wrapper">
             {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
               <noscript class="small-hide medium-hide">
@@ -312,7 +312,7 @@
           </div>
           
           {%- if shop.customer_accounts_enabled -%}
-            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="relative link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
               {% render 'icon-account' %}
               <span class="visually-hidden">
                 {%- liquid
@@ -333,11 +333,11 @@
             {%- endcase -%}
           {%- endfor -%}
           <div class="hidden">{% render 'header-search', input_id: 'Search-In-Modal' %}</div>
-          <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-            <img src="https://cdn.shopify.com/s/files/1/0824/4654/9278/files/cart.png?v=1696010109"/>
+          <a href="{{ routes.cart_url }}" class="relative link focus-inset" id="cart-icon-bubble">
+            {% render 'icon-cart' %}
             <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
             {%- if cart != empty -%}
-              <div class="cart-count-bubble cart-count-bubble bg-primary top-[30%] text-white bottom-0 left-[unset] right-[25%] w-3 h-3 text-[9px]">
+              <div class="cart-count-bubble cart-count-bubble bg-primary top-[-2px] text-white bottom-0 left-[unset] right-[-4px] w-3 h-3 text-[9px]">
                 {%- if cart.item_count < 100 -%}
                   <span aria-hidden="true">{{ cart.item_count }}</span>
                 {%- endif -%}

@@ -50,7 +50,19 @@
     }
     .header__inline-menu details ul{
       @apply absolute;
-      @apply top-5;
+      @apply top-11;
+      @apply bg-white;
+      @apply text-black;
+      @apply w-52;
+      @apply border;
+      @apply border-black;
+      @apply border-solid;
+      @apply divide-y;
+      @apply divide-black;
+    }
+    .header__inline-menu details ul li a{
+      @apply p-4;
+      @apply block;
     }
     .menu-drawer{
       @apply bg-white;

@@ -4,12 +4,24 @@
   src: url('Evolventa-Bold.woff') format('woff');  
 }
 @font-face {
-  font-family: "NunitoSans-Regular";
+  font-family: "NunitoSans";
   src: url('NunitoSans-Regular.woff') format('woff');  
+  font-weight: 400;
+}
+@font-face {
+  font-family: "NunitoSans";
+  src: url('NunitoSans-SemiBold.woff') format('woff');  
+  font-weight: 600;
+}
+@font-face {
+  font-family: "NunitoSans";
+  src: url('NunitoSans-Bold.woff') format('woff');  
+  font-weight: 700;
 }
 html,body,div,p{
-  font-family: NunitoSans-Regular;
+  font-family: NunitoSans;
   letter-spacing: 0;
+  font-weight: 400;
 }
 h1,h2,h3,h4,h5,h6, .Evolventa-Bold{
   font-family: Evolventa-Bold;
@@ -35,21 +47,12 @@ summary .icon-caret {
 #menu-drawer{
   background-color:#fff!important;
 }
-#HeaderLanguageForm .icon-caret {
-  right: 24px;
+.header-localization button .icon-polygon {
   height: 7px;
+  position: absolute;
+  right: 14px;
+  top: 40%;
 }
-.header-localization button .icon-caret {
-  height: 7px;
-    position: absolute;
-    right: 8px;
-    top: 40%;
-}
-.header__icon .icon {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
 
 .timeline .relative.items-center:before{
   content: "";
