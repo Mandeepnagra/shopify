@@ -18,9 +18,9 @@
   <div style="border-width:0; top: 3.2rem; bottom:unset;" class="disclosure__list-wrapper right-0" hidden>
     <ul id="{{ localPosition }}List" role="list" class="bg-white text-black py-0 divide-y divide-black border border-black border-solid w-32">
       {%- for language in localization.available_languages -%}
-        <li class="disclosure__item" tabindex="-1">
+        <li class="disclosure__item uppercase" tabindex="-1">
           <a
-            class="p-4 flex gap-x-2 text-sm{% if language.iso_code == localization.language.iso_code %} disclosure__link--active{% endif %} focus-inset"
+            class="p-4 flex gap-x-2 text-sm{% if language.iso_code == localization.language.iso_code %}text-primary disclosure__link--active{% endif %} focus-inset"
             href="#"
             hreflang="{{ language.iso_code }}"
             lang="{{ language.iso_code }}"
