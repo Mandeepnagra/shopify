@@ -4,7 +4,6 @@
   Accepts:
     - localPosition: pass in the position in which the form is coming up to create specific IDs
 {%- endcomment -%}
-
 <div class="disclosure">
   <button
     type="button"
@@ -16,8 +15,8 @@
     {% render 'icon-polygon' %}
     <span class="ml-[7px] uppercase">{{ localization.language.iso_code | capitalize }}</span> 
   </button>
-  <div style="border-width:0; top: 3.2rem;" class="disclosure__list-wrapper" hidden>
-    <ul id="{{ localPosition }}List" role="list" class="bg-white py-0 divide-y divide-black border border-black border-solid w-32">
+  <div style="border-width:0; top: 3.2rem; bottom:unset;" class="disclosure__list-wrapper right-0" hidden>
+    <ul id="{{ localPosition }}List" role="list" class="bg-white text-black py-0 divide-y divide-black border border-black border-solid w-32">
       {%- for language in localization.available_languages -%}
         <li class="disclosure__item" tabindex="-1">
           <a

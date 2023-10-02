@@ -98,3 +98,8 @@ summary .icon-caret {
     display: none;
   }
 }
+@media (max-width: 989px){
+  body .disclosure__list-wrapper{
+    position: unset;
+  }
+}

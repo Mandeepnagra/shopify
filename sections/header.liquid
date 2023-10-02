@@ -158,8 +158,8 @@
   -%}
   <header class="">
   <div class="bg-black top-header max-sm:hidden">
-    <div class="container text-white text-right flex flex-row items-center py-2.5 justify-end  space-x-[165px] px-2 md:px-0">
-      <ul class="flex items-center space-x-[29px]">
+    <div class="container text-white text-right flex flex-row items-center py-2.5 justify-end  space-x-[165px] px-2 xl:px-0">
+      <ul class="flex items-center space-x-[31px]">
       {% for link in linklists.top-menu.links %}
         <li class="text-sm hover:text-primary"><a href="{{ link.url }}">{{ link.title }}</a></li>
       {% endfor %} 
@@ -195,7 +195,7 @@
   </div>
 
   <div class="main-header bg-white ">
-    <div class="container px-2 md:px-0">
+    <div class="container px-2 xl:px-0">
       <div class="flex justify-between h-[70px]">
         <div class="flex items-center">
           {%- liquid
