@@ -161,7 +161,7 @@
     <div class="container text-white text-right flex flex-row items-center py-2.5 justify-end  space-x-[165px] px-2 xl:px-0">
       <ul class="flex items-center space-x-[31px]">
       {% for link in linklists.top-menu.links %}
-        <li class="text-sm hover:text-primary"><a href="{{ link.url }}">{{ link.title }}</a></li>
+        <li class="font-semibold text-sm hover:text-primary"><a href="{{ link.url }}">{{ link.title }}</a></li>
       {% endfor %} 
       </ul>
       {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
