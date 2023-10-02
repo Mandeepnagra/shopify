@@ -2517,6 +2517,14 @@ video {
     padding-top: 120px;
   }
 
+  .md\:pb-\[151px\] {
+    padding-bottom: 151px;
+  }
+
+  .md\:pt-\[157px\] {
+    padding-top: 157px;
+  }
+
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
@@ -2595,6 +2603,14 @@ video {
 
   .lg\:pt-20 {
     padding-top: 5rem;
+  }
+
+  .lg\:pb-\[71px\] {
+    padding-bottom: 71px;
+  }
+
+  .lg\:pt-\[75px\] {
+    padding-top: 75px;
   }
 
   .lg\:text-7xl {
