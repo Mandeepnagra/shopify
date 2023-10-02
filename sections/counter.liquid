@@ -32,32 +32,49 @@
   }
 
   var inView = false;
-  var i = 0;
+  var i = 0; //to trigger counter just once
   
   function counterBlockScript(){
     const counterBlock = document.querySelector('#counter');
     if(isInViewport(counterBlock)){
       inView = true;
     }
-    if(inView == true && i == 0){
-     const counters = document.querySelectorAll('.counter_number');
-     var count = 0;
-     var speed = 1;
-     for (let n of counters) {
-       const updateCount = () => {
-           const target = +n.getAttribute('data-target');
-           const divider = 5000;
-           ++count;
-           ++i;
-           if (count < target) {
-               n.innerText = Math.ceil(count);
-               setTimeout(updateCount, speed);
-           } else {
-               n.innerText = target;
-           }
-       };
-       updateCount();
-     } 
+    if(inView == true && i == 0){  //to trigger counter just once, when in view
+      var intervalTime;
+      let duration = 2000;
+
+      let animateNumberInCounter = (number,item, ratio, intervalTime) =>{
+        let startingNum = 0;
+        let interval = setInterval(()=>{
+          if(startingNum >= number){
+            clearInterval(interval);
+          } else {
+            startingNum += ratio;
+            item.innerHTML = Math.round(startingNum);
+          } 
+        }, intervalTime);
+      };
+
+      ++i; //to trigger counter just once
+
+      const counters = document.querySelectorAll('.counter_number');
+      var ratio = 1;
+      var highestTarget = 0;
+
+      //Getting the highest target value from data-attribute
+      for ( var j =0; j < counters.length; j++){
+        var value = counters[j].getAttribute("data-target");
+        if ( highestTarget < parseInt(value) ){ highestTarget = value;}
+      }
+
+      //animateNumberInCounter for each counter element
+      [].forEach.call(counters, function(el) {
+        target = parseInt(el.getAttribute('data-target'));
+        ratio = (target/highestTarget);
+        intervalTime = (duration/highestTarget);
+        animateNumberInCounter(target, el, ratio);
+      });
+
    }
   }
   document.addEventListener('scroll', counterBlockScript);
