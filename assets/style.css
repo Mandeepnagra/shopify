@@ -763,6 +763,9 @@ video {
 .ml-\[7px\] {
   margin-left: 7px;
 }
+.mb-\[9px\] {
+  margin-bottom: 9px;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -2563,6 +2566,10 @@ video {
     margin-top: 2.25rem;
   }
 
+  .lg\:mt-\[37px\] {
+    margin-top: 37px;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -2611,6 +2618,10 @@ video {
 
   .lg\:pt-\[75px\] {
     padding-top: 75px;
+  }
+
+  .lg\:pt-\[77px\] {
+    padding-top: 77px;
   }
 
   .lg\:text-7xl {
