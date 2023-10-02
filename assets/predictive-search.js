@@ -176,7 +176,7 @@ class PredictiveSearch extends SearchForm {
       return;
     }
 
-    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&section_id=predictive-search`, {
+    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&resources[type]=article&section_id=predictive-search`, {
       signal: this.abortController.signal,
     })
       .then((response) => {
@@ -217,7 +217,7 @@ class PredictiveSearch extends SearchForm {
   }
 
   setLiveRegionText(statusText) {
-    this.statusElement.setAttribute('aria-hidden', 'false');
+    //this.statusElement.setAttribute('aria-hidden', 'false');
     this.statusElement.textContent = statusText;
 
     setTimeout(() => {
@@ -226,11 +226,23 @@ class PredictiveSearch extends SearchForm {
   }
 
   renderSearchResults(resultsMarkup) {
-    this.predictiveSearchResults.innerHTML = resultsMarkup;
-    this.setAttribute('results', true);
+    //this.predictiveSearchResults.innerHTML = resultsMarkup;
+    //this.setAttribute('results', true);
+    const articleSearchResults = document.getElementById('articleSearchResults');  
+    articleSearchResults.classList.remove("hidden"); 
+    articleSearchResults.innerHTML = resultsMarkup;
 
-    this.setLiveRegionResults();
-    this.open();
+    const jobsList = document.querySelectorAll('#jobCats li');
+    const allCareersDiv = document.querySelectorAll('#allCareers > div');
+    [].forEach.call(jobsList, function(el) {
+      el.classList.remove("active");
+    });
+    [].forEach.call(allCareersDiv, function(el) {
+      el.classList.add("hidden");
+    });
+
+    //this.setLiveRegionResults();
+    //this.open();
   }
 
   setLiveRegionResults() {

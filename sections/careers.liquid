@@ -17,16 +17,34 @@
                 {% endfor %} 
                 <li class="more">+More</li>
             </ul>   
-            <form id="careersSearchForm" class="flex justify-between bg-white rounded-[70px]" action="/search" method="get" role="search">
-                <input type="hidden" name="type" value="article" />
-                <input class="bg-white pl-3 rounded-l-[70px] lg:pl-[38px] py-3 text-lg leading-[14px] text-[#606060]" type="search" name="q" value="" placeholder="Search roles" aria-label="Search roles">
-                <button class=" bg-primary text-white py-3.5 px-10 lg:px-[60px] rounded-[70px]" type="submit" class="">
-                    <svg class="icon icon-search h-5 w-5" aria-hidden="true" focusable="false">
-                        <use href="#icon-search">
-                    </svg>
-                </button>
-            </form>
+            <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+            <predictive-search data-loading-text="Loading...">
+                <form id="careersSearchForm" class="flex justify-between bg-white rounded-[70px]" action="{{ routes.search_url }}" method="get" role="search" data-editor-form-attribute="">
+                    <input type="hidden" name="type" value="article" />
+                    <input class="bg-white pl-3 rounded-l-[70px] lg:pl-[38px] py-3 text-lg leading-[14px] text-[#606060]" type="search" name="q" value="" placeholder="Search roles" aria-label="Search roles" role="combobox" aria-expanded="false" aria-owns="predictive-search-results" aria-controls="predictive-search-results" aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false">
+                    <button type="reset" class="reset__button field__button hidden" aria-label="Clear search term">
+                        <svg class="icon icon-close" aria-hidden="true" focusable="false">
+                          <use xlink:href="#icon-reset">
+                        </use></svg>
+                    </button>
+                    <button class=" bg-primary text-white py-3.5 px-10 lg:px-[60px] rounded-[70px]" type="submit" id="careerSearchSubmitBtn">
+                        <svg class="icon icon-search h-5 w-5" aria-hidden="true" focusable="false">
+                            <use href="#icon-search">
+                        </svg>
+                    </button>
+                    <div class="hidden predictive-search predictive-search--header" tabindex="-1" data-predictive-search="">
+                        <div class="predictive-search__loading-state">
+                          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                    </div>
+                    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                </form>
+            </predictive-search>
         </div>
+
+        <div class="hidden" id="articleSearchResults"> </div>
 
         <div id="allCareers">
             <div id="careers" class="all"> 
@@ -148,7 +166,9 @@
     const jobsLi = document.querySelectorAll('#jobCats li');
     const allCareers = document.querySelectorAll('#allCareers > div');
     document.getElementById('jobCats').addEventListener('click', function (e) {
-        if (e.target && e.target.matches("li")) {           
+        if (e.target && e.target.matches("li")) {   
+            const articleSearchResults = document.getElementById('articleSearchResults');  
+            articleSearchResults.classList.add("hidden");     
             [].forEach.call(jobsLi, function(el) {
                 el.classList.remove("active");
             });
@@ -162,25 +182,18 @@
         }
     });
 
-    /*document.getElementById("careersSearchForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        let searchUrl = this.getAttribute("action");
-        let formData = new FormData(this);
-        var object = {};
-        formData.forEach(function(value, key){
-            object[key] = value;
-        });
-        var data = JSON.stringify(object);
-        var xhttp = new XMLHttpRequest();
-        xhttp.open('POST', searchUrl, true);
-        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhttp.onreadystatechange = function() {
-            if(xhttp.readyState == 4 && xhttp.status == 200) {
-                console.log(xhttp.responseText);
-            }
-        }
-        xhttp.send(data);
-    });*/
+    document.getElementById("careersSearchForm").addEventListener("submit", function (e) {
+        e.preventDefault();    
+    });
+    document.getElementById('careerSearchSubmitBtn').addEventListener('click', function (e) {
+        e.preventDefault(); 
+    });
+
+    document.getElementById("careersSearchForm").addEventListener("reset", function (e) {
+        e.preventDefault();  
+        console.log('gdj');  
+    });
+
 
 
 

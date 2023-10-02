@@ -92,6 +92,9 @@ summary .icon-caret {
 .timeline .relative.items-center:last-child:after {
   display:none;
 }
+#careersSearchForm button.reset__button.field__button {
+  display: none;
+}
 @media (max-width: 768px){
   .timeline .relative.items-center::after,
   .timeline .relative.items-center::before{

@@ -6,6 +6,19 @@
 | plus: predictive_search.resources.articles.size
 %}
   <div id="predictive-search-results" role="listbox">
+    {%- if predictive_search.resources.articles.size > 0 -%}
+      {% for article in predictive_search.resources.articles %}
+        <a class="group block md:flex flex-row items-center gap-y-2.5 text-left bg-white md:hover:bg-black hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
+            <div class="basis-3/5 py-2 md:pl-5">
+                <div class="text-primary uppercase text-[13px]">{% assign check = 0 %}{% for tag in article.tags %}{% unless check == 0 %}, {% endunless %}{{tag}}{% assign check = 1 %}{% endfor %}</div>
+                <h3 class="mb-3 md:group-hover:text-white">{{ article.title }}</h3>
+                <p class="mb-4 text-lg leading-[25px] md:group-hover:text-white">{{ article.excerpt | truncate: 90 }}</p>
+                <button class="inline-block border border-solid border-primary px-11 py-3.5 text-black bg-white md:group-hover:bg-primary md:group-hover:text-white text-sm leading-[14px] uppercase rounded-[30px]">Apply</button>
+            </div>
+            <div class="basis-2/5 bg-cover bg-center w-full h-44" style="background-image:url({{ article.image.src | img_url: 'original' }})" title="{{ article.title }}"><span></span></div>
+        </a>
+      {% endfor %}
+    {%- endif -%}
     {%- if first_column_results_size > 0 or predictive_search.resources.products.size > 0 -%}
       <div id="predictive-search-results-groups-wrapper" class="predictive-search__results-groups-wrapper{% unless predictive_search.resources.products.size > 0 %} predictive-search__results-groups-wrapper--no-products{% endunless %}{% unless predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 %} predictive-search__results-groups-wrapper--no-suggestions{% endunless %}">
     {%- endif -%}
@@ -39,7 +52,7 @@
           </ul>
         </div>
       {%- endif -%}
-      {%- if predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 -%}
+      {%- if predictive_search.resources.pages.size > 0 -%}
         <div class="predictive-search__pages-wrapper">
           <h2 id="predictive-search-pages-desktop" class="predictive-search__heading text-body caption-with-letter-spacing">
             {{- 'templates.search.pages' | t -}}
@@ -69,7 +82,7 @@
       {%- if first_column_results_size > 0 -%}
         </div>
       {%- endif -%}
-      {%- if predictive_search.resources.products.size > 0 or predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 -%}
+      {%- if predictive_search.resources.products.size > 0 or predictive_search.resources.pages.size > 0 -%}
         <div class="predictive-search__result-group">
           {%- if predictive_search.resources.products.size > 0 -%}
             <div>
@@ -100,7 +113,7 @@
               </ul>
             </div>
           {%- endif -%}
-          {%- if predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 -%}
+          {%- if predictive_search.resources.pages.size > 0 -%}
             <div class="predictive-search__pages-wrapper">
               <h2 id="predictive-search-pages-mobile" class="predictive-search__heading text-body caption-with-letter-spacing">
                 {{- 'templates.search.pages' | t -}}
@@ -133,6 +146,13 @@
       </div>
     {%- endif -%}
 
+    {%- if predictive_search.resources.articles.size < 1 -%}
+      <div class="group block md:flex flex-row items-center gap-y-2.5 text-left bg-white hover:transition-all p-[7px] mb-2.5" href="{{ article.url }}">
+        <div class="basis-3/5 py-2 md:pl-5">
+            <p>No jobs found.</p>
+        </div>
+      </div>
+    {%- comment -%}
     <div class="predictive-search__loading-state" aria-hidden="true">
       <svg
         aria-hidden="true"
@@ -156,7 +176,10 @@
         {% render 'icon-arrow' %}
       </button>
     </div>
+  {%- endcomment -%}
+
   </div>
+ 
 
   <span class="hidden" data-predictive-search-live-region-count-value>
     {% liquid
