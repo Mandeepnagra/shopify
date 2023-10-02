@@ -82,7 +82,7 @@ class PredictiveSearch extends SearchForm {
   }
 
   onKeyup(event) {
-    if (!this.getQuery().length) this.close(true);
+    if (!this.getQuery().length) this.close(true); 
     event.preventDefault();
 
     switch (event.code) {
