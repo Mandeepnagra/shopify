@@ -4,7 +4,15 @@
     "banner": {
       "type": "banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/bg-img.jpg"
+        "image": "shopify:\/\/shop_images\/bg-img.jpg",
+        "background_repeat": "repeat",
+        "background_position": "auto",
+        "banner_heading": "Transform your world together",
+        "banner_subheading": "Talent wanted",
+        "banner_description": "Craft experiences that customers rave about. Our customers are at the heart of everything we do. Understand the market, analyze trends, and deliver something better.",
+        "button_label": "Join our team",
+        "button_link": "",
+        "align_content": "center"
       }
     },
     "counter": {
@@ -87,13 +95,14 @@
         "block1",
         "block2",
         "block3",
-        "block4" 
+        "block4"
       ],
       "settings": {
         "timeline_heading": "We are transforming the world."
       }
-    },"careers":{
-      "type":"careers",
+    },
+    "careers": {
+      "type": "careers",
       "blocks": {
         "block1": {
           "type": "job_block",
@@ -125,8 +134,10 @@
         "block2",
         "block3",
         "block4"
-      ],"settings": {
-        "careers_heading": "Open Roles"
+      ],
+      "settings": {
+        "careers_heading": "Open Roles",
+        "button_label": "Load More"
       }
     }
   },
