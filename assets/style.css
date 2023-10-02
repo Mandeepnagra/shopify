@@ -2570,6 +2570,10 @@ video {
     margin-top: 37px;
   }
 
+  .lg\:mb-\[3\.625rem\] {
+    margin-bottom: 3.625rem;
+  }
+
   .lg\:flex {
     display: flex;
   }
