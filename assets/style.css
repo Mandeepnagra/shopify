@@ -1306,6 +1306,9 @@ video {
 .gap-4 {
   gap: 1rem;
 }
+.gap-5 {
+  gap: 1.25rem;
+}
 .gap-y-2 {
   row-gap: 0.5rem;
 }
@@ -1899,6 +1902,12 @@ video {
 }
 .pr-\[24px\] {
   padding-right: 24px;
+}
+.pr-1 {
+  padding-right: 0.25rem;
+}
+.pr-1\.5 {
+  padding-right: 0.375rem;
 }
 .text-left {
   text-align: left;

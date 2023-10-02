@@ -279,8 +279,8 @@
           {%- endif -%}
         </div>
 
-        <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %} pr-0 gap-4">
-          <div class="desktop-localization-wrapper">
+        <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %} pr-0 gap-5">
+          <div class="desktop-localization-wrapper pr-1.5">
             {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
               <noscript class="small-hide medium-hide">
                 {%- form 'localization', id: 'HeaderCountryMobileFormNoScript', class: 'localization-form' -%}
