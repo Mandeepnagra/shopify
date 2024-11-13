@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -14,7 +23,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -72,14 +81,14 @@
     "7083d3ff-b0ad-44ad-8e5e-a5ec44a5f02c": {
       "type": "banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/bg-img.jpg",
+        "image": "shopify://shop_images/240_F_294899572_DTa9koIftIhBV07IUrUsyH6llBBAMiXQ.jpg",
         "background_repeat": "repeat",
         "background_position": "auto",
         "banner_heading": "Shopify Developer Test",
         "banner_subheading": "Talent wanted",
         "banner_description": "Craft experiences that customers rave about. Our customers are at the heart of everything we do. Understand the market, analyze trends, and deliver something better.",
         "button_label": "View Page",
-        "button_link": "shopify:\/\/pages\/careers",
+        "button_link": "shopify://pages/careers",
         "align_content": "center"
       }
     }
