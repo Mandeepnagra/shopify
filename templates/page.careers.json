@@ -1,12 +1,21 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "wrapper": "div#page-careers.page-careers",
   "sections": {
     "banner": {
       "type": "banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/bg-img.jpg",
+        "image": "shopify://shop_images/240_F_294899572_DTa9koIftIhBV07IUrUsyH6llBBAMiXQ.jpg",
         "background_repeat": "repeat",
-        "background_position": "auto",
+        "background_position": "cover",
         "banner_heading": "Transform your world together",
         "banner_subheading": "Talent wanted",
         "banner_description": "Craft experiences that customers rave about. Our customers are at the heart of everything we do. Understand the market, analyze trends, and deliver something better.",
@@ -48,8 +57,7 @@
         "block2",
         "block3"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "timeline": {
       "type": "timeline",
@@ -57,7 +65,6 @@
         "block1": {
           "type": "timeline_block",
           "settings": {
-            "timeline_image": "shopify:\/\/shop_images\/2016.png",
             "timeline_image_position": "flex-row",
             "timeline_year": 2016,
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
@@ -66,7 +73,6 @@
         "block2": {
           "type": "timeline_block",
           "settings": {
-            "timeline_image": "shopify:\/\/shop_images\/2019.jpg",
             "timeline_image_position": "flex-row-reverse",
             "timeline_year": 2019,
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
@@ -75,7 +81,6 @@
         "block3": {
           "type": "timeline_block",
           "settings": {
-            "timeline_image": "shopify:\/\/shop_images\/2021.jpg",
             "timeline_image_position": "flex-row",
             "timeline_year": 2021,
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
@@ -84,7 +89,6 @@
         "block4": {
           "type": "timeline_block",
           "settings": {
-            "timeline_image": "shopify:\/\/shop_images\/2023.jpg",
             "timeline_image_position": "flex-row-reverse",
             "timeline_year": 2023,
             "timeline_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis vitae enim at scelerisque. Pellentesque gravida pretium interdum."
